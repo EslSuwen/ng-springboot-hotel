@@ -19,24 +19,24 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @EnableSwagger2
 public class Swagger2Configuration {
 
-    @Bean
-    public Docket createRestApi() {
-        return new Docket(DocumentationType.SWAGGER_2)
-                //协议，http或https
-                .protocols(Sets.newHashSet("http"))
-                .apiInfo(apiInfo())
-                .select()
-                //一定要写对，会在这个路径下扫描controller定义
-                .apis(RequestHandlerSelectors.basePackage("com.hotel.controller"))
-                .paths(PathSelectors.any())
-                .build();
-    }
+  @Bean
+  public Docket createRestApi() {
+    return new Docket(DocumentationType.SWAGGER_2)
+        // 协议，http或https
+        .protocols(Sets.newHashSet("http"))
+        .apiInfo(apiInfo())
+        .select()
+        // 一定要写对，会在这个路径下扫描controller定义
+        .apis(RequestHandlerSelectors.basePackage("com.hotel.controller"))
+        .paths(PathSelectors.any())
+        .build();
+  }
 
-    private ApiInfo apiInfo() {
-        return new ApiInfoBuilder()
-                .title("REST接口定义")
-                .version("1.0")
-                .description("旅馆RestFul接口文档")
-                .build();
-    }
+  private ApiInfo apiInfo() {
+    return new ApiInfoBuilder()
+        .title("REST接口定义")
+        .version("1.0")
+        .description("旅馆RestFul接口文档")
+        .build();
+  }
 }

@@ -13,11 +13,11 @@ import java.util.Date;
  */
 @Data
 public class IncomeDto {
-    private Integer id;
-    private String rommNo;
-    private String incoming;
+  private Integer id;
+  private String rommNo;
+  private String incoming;
 
-    @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss") //入参
-    @JsonFormat(timezone = "GMT+8", pattern = "yyyy-MM-dd HH:mm:ss") //出参
-    private Date logoutDate;
+  @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss") // 入参
+  @JsonFormat(timezone = "GMT+8", pattern = "yyyy-MM-dd HH:mm:ss") // 出参
+  private Date logoutDate;
 }

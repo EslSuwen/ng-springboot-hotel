@@ -16,7 +16,7 @@ const httpOptions = {
   providedIn: 'root'
 })
 export class RoomService {
-  private roomsUrl = 'http://3s.dkys.org:20750/api/rooms';
+  private roomsUrl = 'http://localhost:8080/api/rooms';
 
 
   constructor(

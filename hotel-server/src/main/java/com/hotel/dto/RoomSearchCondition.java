@@ -9,8 +9,8 @@ import lombok.Data;
  */
 @Data
 public class RoomSearchCondition {
-    private String roomNo;
-    private String name;
-    private String idCard;
-    private String phoneNo;
+  private String roomNo;
+  private String name;
+  private String idCard;
+  private String phoneNo;
 }

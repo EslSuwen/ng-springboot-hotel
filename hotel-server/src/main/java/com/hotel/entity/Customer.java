@@ -16,41 +16,28 @@ import java.util.List;
 @Entity
 @Table(name = "customer")
 public class Customer {
-    /**
-     * id
-     */
-    @Id
-    @Column
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+  /** id */
+  @Id
+  @Column
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  private Integer id;
 
-    /**
-     * 姓名
-     */
-    @Column(nullable = false,length = 80)
-    private String  name;
+  /** 姓名 */
+  @Column(nullable = false, length = 80)
+  private String name;
 
+  /** 身份证号 */
+  @Column(nullable = false, length = 18)
+  private String idCard;
 
-    /**
-     * 身份证号
-     */
-    @Column(nullable = false,length = 18)
-    private String  idCard;
+  /** 手机号 */
+  @Column(length = 11)
+  private String phoneNo;
 
-    /**
-     * 手机号
-     */
-    @Column(length = 11)
-    private String phoneNo;
+  /** 房间 */
+  @ManyToMany(cascade = CascadeType.REFRESH, mappedBy = "customers", fetch = FetchType.EAGER)
+  private List<Room> rooms;
 
-    /**
-     * 房间
-     */
-    @ManyToMany(cascade = CascadeType.REFRESH,mappedBy = "customers")
-    private List<Room> rooms;
-
-
-    @Column(length = 100)
-    private String comment;
-
+  @Column(length = 100)
+  private String comment;
 }

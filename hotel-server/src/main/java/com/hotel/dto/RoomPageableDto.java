@@ -13,16 +13,16 @@ import java.util.List;
  */
 @Data
 public class RoomPageableDto {
-    @Min(value = 1,message = "页码最小为1")
-    @Pattern(regexp = "^\\d+$",message = "页码必须为整数")
-    private int pageIndex;
+  @Min(value = 1, message = "页码最小为1")
+  @Pattern(regexp = "^\\d+$", message = "页码必须为整数")
+  private int pageIndex;
 
-    @Min(value = 1,message = "每页条目数量至少为1")
-    @Pattern(regexp = "^\\d+$",message = "条目数量必须为整数")
-    private int pageSize;
+  @Min(value = 1, message = "每页条目数量至少为1")
+  @Pattern(regexp = "^\\d+$", message = "条目数量必须为整数")
+  private int pageSize;
 
-    private String sortKey;
-    private String sortValue;
+  private String sortKey;
+  private String sortValue;
 
-    private List<String> status;
+  private List<String> status;
 }

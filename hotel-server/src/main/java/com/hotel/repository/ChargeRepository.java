@@ -10,5 +10,4 @@ import org.springframework.stereotype.Repository;
  * @description
  */
 @Repository
-public interface ChargeRepository extends JpaRepository<Bed,Integer> {
-}
+public interface ChargeRepository extends JpaRepository<Bed, Integer> {}

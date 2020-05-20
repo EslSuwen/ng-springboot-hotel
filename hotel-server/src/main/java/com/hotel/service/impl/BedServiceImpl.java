@@ -12,11 +12,10 @@ import org.springframework.stereotype.Service;
  */
 @Service
 public class BedServiceImpl implements BedService {
-    @Autowired
-    private BedRepository bedRepository;
+  @Autowired private BedRepository bedRepository;
 
-    @Override
-    public void delete(Integer id) {
-        bedRepository.delete(id);
-    }
+  @Override
+  public void delete(Integer id) {
+    bedRepository.deleteById(id);
+  }
 }

@@ -6,9 +6,10 @@ package com.hotel.service;
  * @description
  */
 public interface BedService {
-    /**
-     * 删除床铺信息
-     * @param id  床铺ID
-     */
-    void delete(Integer id);
+  /**
+   * 删除床铺信息
+   *
+   * @param id 床铺ID
+   */
+  void delete(Integer id);
 }

@@ -5,5 +5,4 @@ package com.hotel.annotation;
  * @date 2019-01-27
  * @description
  */
-public interface UpdateCustomerGroup {
-}
+public interface UpdateCustomerGroup {}

@@ -5,6 +5,4 @@ package com.hotel.service;
  * @date 2019-01-25
  * @description
  */
-public class ChargeService {
-
-}
+public class ChargeService {}

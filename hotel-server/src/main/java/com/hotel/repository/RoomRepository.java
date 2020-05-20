@@ -14,19 +14,20 @@ import java.util.List;
  * @description
  */
 @Repository
-public interface RoomRepository extends JpaRepository<Room,Integer> {
-    /**
-     * 根据房间号模糊查找
-     * @return  房间列表
-     */
-    @Query("select h from Room h where h.roomNo like %:roomNo%")
-    List<Room> searchRoomsByRoomNo(@Param("roomNo") String roomNo);
+public interface RoomRepository extends JpaRepository<Room, Integer> {
+  /**
+   * 根据房间号模糊查找
+   *
+   * @return 房间列表
+   */
+  @Query("select h from Room h where h.roomNo like %:roomNo%")
+  List<Room> searchRoomsByRoomNo(@Param("roomNo") String roomNo);
 
-    /**
-     * 根据房间号查询房间信息
-     * @param roomNo    房间号
-     * @return          房间信息
-     */
-    List<Room> findRoomByRoomNo(String roomNo);
-
+  /**
+   * 根据房间号查询房间信息
+   *
+   * @param roomNo 房间号
+   * @return 房间信息
+   */
+  List<Room> findRoomByRoomNo(String roomNo);
 }

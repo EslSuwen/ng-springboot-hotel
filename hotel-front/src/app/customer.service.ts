@@ -16,7 +16,7 @@ const httpOptions = {
   providedIn: 'root'
 })
 export class CustomerService {
-  private customersUrl = 'http://3s.dkys.org:20750/api/customers';
+  private customersUrl = 'http://localhost:8080/api/customers';
 
 
   constructor(

@@ -9,8 +9,8 @@ import lombok.Data;
  */
 @Data
 public class BedDto {
-    private  Integer id;
-    private  String  name;
-    private  String  type;
-    private  String  size;
+  private Integer id;
+  private String name;
+  private String type;
+  private String size;
 }

@@ -16,17 +16,15 @@ import java.util.Date;
 @Table(name = "income")
 public class Income implements Serializable {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+  @Id
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  private Integer id;
 
-    @ManyToOne
-    private Room    room;
+  @ManyToOne private Room room;
 
-    @Column
-    private Float   incoming;
+  @Column private Float incoming;
 
-    @Column
-    @Temporal(TemporalType.TIMESTAMP)
-    private Date    logoutDate;
+  @Column
+  @Temporal(TemporalType.TIMESTAMP)
+  private Date logoutDate;
 }
