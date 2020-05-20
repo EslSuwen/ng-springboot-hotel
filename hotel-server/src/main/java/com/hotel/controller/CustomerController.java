@@ -168,6 +168,7 @@ public class CustomerController {
     if (customers != null) {
       List<CustomerDto> customerDtos = new ArrayList<>();
       for (Customer customer : customers) {
+        log.info(customer.toString());
         customerDtos.add(Converters.customer2Dto(customer));
       }
       return customerDtos;

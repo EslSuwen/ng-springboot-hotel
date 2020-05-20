@@ -3,6 +3,7 @@ package com.hotel.service.impl;
 import com.hotel.entity.Customer;
 import com.hotel.repository.CustomerRepository;
 import com.hotel.service.CustomerService;
+import com.hotel.util.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -42,13 +43,12 @@ public class CustomerServiceImpl implements CustomerService {
 
   @Override
   public Customer update(Customer customer) {
-    /*    Customer currentInstance = customerRepository.findOne(customer.getId());
+        Customer currentInstance = customerRepository.findById(customer.getId()).get();
     // 支持部分更新
     String[] nullPropertyNames = BeanUtils.getNullPropertyNames(customer);
     org.springframework.beans.BeanUtils.copyProperties(
         customer, currentInstance, nullPropertyNames);
-    return customerRepository.save(currentInstance);*/
-    return null;
+    return customerRepository.save(currentInstance);
   }
 
   @Override

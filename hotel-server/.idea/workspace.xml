@@ -7,57 +7,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="aa685ce2-df0e-479a-b2d4-b25029544e82" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/banner.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/log4j2/log4j2.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/rebel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/META-INF/MANIFEST.MF" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hotel/HotelApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hotel/HotelApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hotel/annotation/AddRoomGroup.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hotel/annotation/AddRoomGroup.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hotel/annotation/LoginGroup.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hotel/annotation/LoginGroup.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hotel/annotation/UpdateCustomerGroup.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hotel/annotation/UpdateCustomerGroup.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hotel/config/Swagger2Configuration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hotel/config/Swagger2Configuration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hotel/constant/BedType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hotel/constant/BedType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hotel/constant/RetCode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hotel/constant/RetCode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hotel/constant/RoomStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hotel/constant/RoomStatus.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hotel/constant/RoomType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hotel/constant/RoomType.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/hotel/controller/CustomerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hotel/controller/CustomerController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hotel/controller/RoomController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hotel/controller/RoomController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hotel/dto/BedDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hotel/dto/BedDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hotel/dto/ChargeDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hotel/dto/ChargeDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hotel/dto/CustomerDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hotel/dto/CustomerDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hotel/dto/IncomeDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hotel/dto/IncomeDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hotel/dto/LogoutDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hotel/dto/LogoutDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hotel/dto/ResultDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hotel/dto/ResultDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hotel/dto/RoomDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hotel/dto/RoomDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hotel/dto/RoomPageableDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hotel/dto/RoomPageableDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hotel/dto/RoomSearchCondition.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hotel/dto/RoomSearchCondition.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hotel/entity/Bed.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hotel/entity/Bed.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hotel/entity/Charge.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hotel/entity/Charge.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/hotel/entity/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hotel/entity/Customer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hotel/entity/Income.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hotel/entity/Income.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/hotel/entity/Room.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hotel/entity/Room.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hotel/exception/CompareException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hotel/exception/CompareException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hotel/exception/RestExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hotel/exception/RestExceptionHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hotel/repository/BedRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hotel/repository/BedRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hotel/repository/ChargeRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hotel/repository/ChargeRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hotel/repository/CustomerRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hotel/repository/CustomerRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hotel/repository/RoomRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hotel/repository/RoomRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hotel/service/BedService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hotel/service/BedService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hotel/service/ChargeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hotel/service/ChargeService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hotel/service/CustomerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hotel/service/CustomerService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hotel/service/RoomService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hotel/service/RoomService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hotel/service/impl/BedServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hotel/service/impl/BedServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/hotel/service/impl/CustomerServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hotel/service/impl/CustomerServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/hotel/service/impl/RoomServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hotel/service/impl/RoomServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hotel/util/BeanUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hotel/util/BeanUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hotel/util/Converters.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hotel/util/Converters.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/logback.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -116,13 +73,16 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="ProjectId" id="1c9XfkPuaHBRtTRhuAdoiQrBWHb" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="DatabaseDriversLRU" value="mysql" />
     <property name="LombokPluginEnabledInProject" value="true" />
     <property name="RequestMappingsPanelOrder0" value="0" />
     <property name="RequestMappingsPanelOrder1" value="1" />
@@ -138,7 +98,7 @@
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="GrepConsole" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.completion" />
     <property name="settings.editor.splitter.proportion" value="0.2006689" />
   </component>
   <component name="RebelAgentSelection">
@@ -218,7 +178,7 @@
       <workItem from="1550643557509" duration="592000" />
       <workItem from="1589941893756" duration="959000" />
       <workItem from="1589942861741" duration="3270000" />
-      <workItem from="1589955745046" duration="4834000" />
+      <workItem from="1589955745046" duration="8312000" />
     </task>
     <servers />
   </component>
@@ -267,58 +227,62 @@
     <option name="version" value="2" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="843" y="429" key="#Assign_Data_Sources" timestamp="1589943455979">
+    <state x="531" y="375" width="893" height="384" key="#Assign_Data_Sources" timestamp="1589966915847">
       <screen x="0" y="23" width="1920" height="1057" />
     </state>
-    <state x="843" y="429" key="#Assign_Data_Sources/0.23.1920.1057@0.23.1920.1057" timestamp="1589943455979" />
+    <state x="531" y="375" width="893" height="384" key="#Assign_Data_Sources/0.23.1920.1057@0.23.1920.1057" timestamp="1589966915847" />
     <state x="533" y="91" key="#HotelApplication" timestamp="1589955610541">
       <screen x="0" y="23" width="1920" height="1057" />
     </state>
     <state x="533" y="91" key="#HotelApplication/0.23.1920.1057@0.23.1920.1057" timestamp="1589955610541" />
-    <state x="560" y="211" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1589942874605">
+    <state x="560" y="211" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1589966896793">
       <screen x="0" y="23" width="1920" height="1057" />
     </state>
-    <state x="560" y="211" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1920.1057@0.23.1920.1057" timestamp="1589942874605" />
+    <state x="560" y="211" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1920.1057@0.23.1920.1057" timestamp="1589966896793" />
+    <state x="100" y="123" width="1720" height="857" key="DiffContextDialog" timestamp="1589966976694">
+      <screen x="0" y="23" width="1920" height="1057" />
+    </state>
+    <state x="100" y="123" width="1720" height="857" key="DiffContextDialog/0.23.1920.1057@0.23.1920.1057" timestamp="1589966976694" />
     <state x="308" y="176" width="1612" height="816" key="GrepConsoleSettings" timestamp="1589961446522">
       <screen x="0" y="23" width="1920" height="1057" />
     </state>
     <state x="308" y="176" width="1612" height="816" key="GrepConsoleSettings/0.23.1920.1057@0.23.1920.1057" timestamp="1589961446522" />
-    <state width="1866" height="867" key="GridCell.Tab.0.bottom" timestamp="1589966037946">
+    <state width="1866" height="499" key="GridCell.Tab.0.bottom" timestamp="1589970001764">
       <screen x="0" y="23" width="1920" height="1057" />
     </state>
-    <state width="1866" height="867" key="GridCell.Tab.0.bottom/0.23.1920.1057@0.23.1920.1057" timestamp="1589966037946" />
-    <state width="1866" height="867" key="GridCell.Tab.0.center" timestamp="1589966037945">
+    <state width="1866" height="499" key="GridCell.Tab.0.bottom/0.23.1920.1057@0.23.1920.1057" timestamp="1589970001764" />
+    <state width="1866" height="499" key="GridCell.Tab.0.center" timestamp="1589970001763">
       <screen x="0" y="23" width="1920" height="1057" />
     </state>
-    <state width="1866" height="867" key="GridCell.Tab.0.center/0.23.1920.1057@0.23.1920.1057" timestamp="1589966037945" />
-    <state width="1866" height="867" key="GridCell.Tab.0.left" timestamp="1589966037945">
+    <state width="1866" height="499" key="GridCell.Tab.0.center/0.23.1920.1057@0.23.1920.1057" timestamp="1589970001763" />
+    <state width="1866" height="499" key="GridCell.Tab.0.left" timestamp="1589970001763">
       <screen x="0" y="23" width="1920" height="1057" />
     </state>
-    <state width="1866" height="867" key="GridCell.Tab.0.left/0.23.1920.1057@0.23.1920.1057" timestamp="1589966037945" />
-    <state width="1866" height="867" key="GridCell.Tab.0.right" timestamp="1589966037946">
+    <state width="1866" height="499" key="GridCell.Tab.0.left/0.23.1920.1057@0.23.1920.1057" timestamp="1589970001763" />
+    <state width="1866" height="499" key="GridCell.Tab.0.right" timestamp="1589970001763">
       <screen x="0" y="23" width="1920" height="1057" />
     </state>
-    <state width="1866" height="867" key="GridCell.Tab.0.right/0.23.1920.1057@0.23.1920.1057" timestamp="1589966037946" />
-    <state width="1866" height="867" key="GridCell.Tab.1.bottom" timestamp="1589966037947">
+    <state width="1866" height="499" key="GridCell.Tab.0.right/0.23.1920.1057@0.23.1920.1057" timestamp="1589970001763" />
+    <state width="1866" height="499" key="GridCell.Tab.1.bottom" timestamp="1589970001764">
       <screen x="0" y="23" width="1920" height="1057" />
     </state>
-    <state width="1866" height="867" key="GridCell.Tab.1.bottom/0.23.1920.1057@0.23.1920.1057" timestamp="1589966037947" />
-    <state width="1866" height="867" key="GridCell.Tab.1.center" timestamp="1589966037947">
+    <state width="1866" height="499" key="GridCell.Tab.1.bottom/0.23.1920.1057@0.23.1920.1057" timestamp="1589970001764" />
+    <state width="1866" height="499" key="GridCell.Tab.1.center" timestamp="1589970001764">
       <screen x="0" y="23" width="1920" height="1057" />
     </state>
-    <state width="1866" height="867" key="GridCell.Tab.1.center/0.23.1920.1057@0.23.1920.1057" timestamp="1589966037947" />
-    <state width="1866" height="867" key="GridCell.Tab.1.left" timestamp="1589966037947">
+    <state width="1866" height="499" key="GridCell.Tab.1.center/0.23.1920.1057@0.23.1920.1057" timestamp="1589970001764" />
+    <state width="1866" height="499" key="GridCell.Tab.1.left" timestamp="1589970001764">
       <screen x="0" y="23" width="1920" height="1057" />
     </state>
-    <state width="1866" height="867" key="GridCell.Tab.1.left/0.23.1920.1057@0.23.1920.1057" timestamp="1589966037947" />
-    <state width="1866" height="867" key="GridCell.Tab.1.right" timestamp="1589966037947">
+    <state width="1866" height="499" key="GridCell.Tab.1.left/0.23.1920.1057@0.23.1920.1057" timestamp="1589970001764" />
+    <state width="1866" height="499" key="GridCell.Tab.1.right" timestamp="1589970001764">
       <screen x="0" y="23" width="1920" height="1057" />
     </state>
-    <state width="1866" height="867" key="GridCell.Tab.1.right/0.23.1920.1057@0.23.1920.1057" timestamp="1589966037947" />
-    <state x="155" y="118" width="1496" height="897" key="SettingsEditor" timestamp="1589961410291">
+    <state width="1866" height="499" key="GridCell.Tab.1.right/0.23.1920.1057@0.23.1920.1057" timestamp="1589970001764" />
+    <state x="155" y="118" width="1496" height="897" key="SettingsEditor" timestamp="1589966741066">
       <screen x="0" y="23" width="1920" height="1057" />
     </state>
-    <state x="155" y="118" width="1496" height="897" key="SettingsEditor/0.23.1920.1057@0.23.1920.1057" timestamp="1589961410291" />
+    <state x="155" y="118" width="1496" height="897" key="SettingsEditor/0.23.1920.1057@0.23.1920.1057" timestamp="1589966741066" />
     <state x="418" y="169" key="spring file set editor" timestamp="1589954784092">
       <screen x="0" y="23" width="1920" height="1057" />
     </state>
@@ -337,64 +301,23 @@
           <line>337</line>
           <option name="timeStamp" value="6" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/hotel/constant/RoomType.java</url>
+          <line>32</line>
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/hotel/controller/CustomerController.java</url>
+          <line>171</line>
+          <option name="timeStamp" value="16" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
-  </component>
-  <component name="debuggerHistoryManager">
-    <expressions id="setValue">
-      <expression>
-        <expression-string>100</expression-string>
-        <language-id>JAVA</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>3</expression-string>
-        <language-id>JAVA</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>&quot;&quot;</expression-string>
-        <language-id>JAVA</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-    </expressions>
-    <expressions id="evaluateExpression">
-      <expression>
-        <expression-string>Math.ceil((out.getTime() - in.getTime()) / 3600.0f / 1000.0f)</expression-string>
-        <language-id>JAVA</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>(out.getTime() - in.getTime()) / 3600.0f / 1000.0f</expression-string>
-        <language-id>JAVA</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>(out.getTime() - in.getTime()) / 3600 / 1000</expression-string>
-        <language-id>JAVA</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>condition.getRoomNo(</expression-string>
-        <language-id>JAVA</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>this.getBridgedMethod()</expression-string>
-        <language-id>JAVA</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>this.getBean()</expression-string>
-        <language-id>JAVA</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>roomDto.getCheckInDate()</expression-string>
-        <language-id>JAVA</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-    </expressions>
+    <pin-to-top-manager>
+      <pinned-members>
+        <PinnedItemInfo typeName="com.hotel.service.impl.CustomerServiceImpl" fieldName="customerRepository" />
+      </pinned-members>
+    </pin-to-top-manager>
   </component>
   <component name="masterDetails">
     <states>

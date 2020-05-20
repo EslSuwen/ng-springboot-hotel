@@ -35,7 +35,7 @@ public class Customer {
   private String phoneNo;
 
   /** 房间 */
-  @ManyToMany(cascade = CascadeType.REFRESH, mappedBy = "customers", fetch = FetchType.EAGER)
+  @ManyToMany(cascade = CascadeType.REFRESH, mappedBy = "customers")
   private List<Room> rooms;
 
   @Column(length = 100)

@@ -61,7 +61,7 @@ public class Room {
   private List<Customer> customers;
 
   /** 房价 */
-  @OneToMany(mappedBy = "room", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+  @OneToMany(mappedBy = "room", cascade = CascadeType.ALL)
   private List<Charge> charges;
 
   /** 收入记录 */

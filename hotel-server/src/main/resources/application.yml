@@ -37,7 +37,7 @@ spring:
       charset: utf-8
       enabled: true
   jpa:
-    open-in-view: false
+    open-in-view: true
     hibernate.ddl-auto: update
     show-sql: true
 

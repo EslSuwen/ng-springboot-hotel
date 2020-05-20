@@ -116,8 +116,7 @@ public class RoomServiceImpl implements RoomService {
 
   @Override
   public Room findOne(Integer id) {
-    //    return roomRepository.findOne(id);
-    return null;
+    return roomRepository.findById(id).orElse(null);
   }
 
   @Override
