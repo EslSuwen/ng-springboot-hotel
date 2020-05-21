@@ -1,6 +1,6 @@
 import {Component, forwardRef, Input, OnInit} from '@angular/core';
 import {Bed} from '../dto/Bed';
-import {RoomService} from '../room.service';
+import {RoomService} from '../service/room.service';
 import {ControlValueAccessor, NG_VALUE_ACCESSOR} from '@angular/forms';
 import {Room} from '../dto/Room';
 

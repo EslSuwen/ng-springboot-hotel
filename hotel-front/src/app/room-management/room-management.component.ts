@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {RoomService} from '../room.service';
+import {RoomService} from '../service/room.service';
 import {Room} from '../dto/Room';
 import {Bed} from '../dto/Bed';
 

@@ -4,7 +4,7 @@ import {Observable, Observer, Subject} from 'rxjs';
 import {Customer} from '../dto/Customer';
 import { Utils} from '../util/Utils';
 import {Room} from '../dto/Room';
-import {RoomService} from '../room.service';
+import {RoomService} from '../service/room.service';
 import {debounceTime, distinctUntilChanged, switchMap} from 'rxjs/operators';
 
 @Component({

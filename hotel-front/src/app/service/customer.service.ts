@@ -1,12 +1,13 @@
-import { Injectable } from '@angular/core';
-import { Customer} from './dto/Customer';
-import { Observable, of } from 'rxjs';
-import { NzMessageService} from 'ng-zorro-antd';
+import {Injectable} from '@angular/core';
+import {Customer} from '../dto/Customer';
+import {Observable, of} from 'rxjs';
+import {NzMessageService} from 'ng-zorro-antd';
 import {HttpClient, HttpHeaders, HttpParams} from '@angular/common/http';
-import { catchError, tap} from 'rxjs/operators';
-import {MESSAGETEXTS} from './const/MessageConsts';
-import {SearchCondition} from './dto/SearchCondition';
-import {Result} from './dto/Result';
+import {catchError, tap} from 'rxjs/operators';
+import {MESSAGETEXTS} from '../const/MessageConsts';
+import {SearchCondition} from '../dto/SearchCondition';
+import {Result} from '../dto/Result';
+import {environment} from '../../environments/environment';
 
 const httpOptions = {
   headers: new HttpHeaders({'Content-Type': 'application/json'})
@@ -16,24 +17,25 @@ const httpOptions = {
   providedIn: 'root'
 })
 export class CustomerService {
-  private customersUrl = 'http://localhost:8080/api/customers';
+  private customersUrl = `${environment.apiUrl}/api/customers`;
 
 
   constructor(
     private http: HttpClient,
-    private message: NzMessageService) { }
+    private message: NzMessageService) {
+  }
 
 
   /**
    * 查询所有的客户信息
    */
   getCustomers(): Observable<Customer[]> {
-       // TODO: send the message _after_ fetching the customers
-      return this.http.get<Customer[]>(this.customersUrl).pipe(
-        tap(_ => this.success(MESSAGETEXTS.FETCH_SUCCESS)),
-        catchError(this.handleError<Customer[]>('查询所有客人信息', []))
-      );
-    }
+    // TODO: send the message _after_ fetching the customers
+    return this.http.get<Customer[]>(this.customersUrl).pipe(
+      tap(_ => this.success(MESSAGETEXTS.FETCH_SUCCESS)),
+      catchError(this.handleError<Customer[]>('查询所有客人信息', []))
+    );
+  }
 
   /**
    * 查询某个客户的信息
@@ -63,7 +65,7 @@ export class CustomerService {
    * 登记：创建客户信息
    * @param customer   客户
    */
-  addCustomer (customer: Customer): Observable<Customer> {
+  addCustomer(customer: Customer): Observable<Customer> {
     return this.http.post<Customer>(this.customersUrl, customer, httpOptions).pipe(
       tap(() => this.success(MESSAGETEXTS.LOGIN_SUCCESS)),
       catchError(this.handleError<Customer>('新增客人信息'))
@@ -79,7 +81,7 @@ export class CustomerService {
     if (customer instanceof Customer) {
       id = customer.id;
     } else if (typeof customer === 'number') {
-       id =  customer;
+      id = customer;
     }
 
     const url = `${this.customersUrl}/${id}`;
@@ -97,15 +99,15 @@ export class CustomerService {
   }
 
   /**
-   * 搜索客户
-   * @param searchConditions
+   * @description 搜索客户
+   * @param searchConditions 搜索条件
    */
   searchCustomers(searchConditions: SearchCondition[]): Observable<Result> {
     if (searchConditions === null
-      || (searchConditions.length === 1 &&  searchConditions[0].key === undefined)
-      || (searchConditions.length === 1 &&  searchConditions[0].key === null)
-      || (searchConditions.length === 1 &&  searchConditions[0].value === undefined)
-      || (searchConditions.length === 1 &&  searchConditions[0].value === null)
+      || (searchConditions.length === 1 && searchConditions[0].key === undefined)
+      || (searchConditions.length === 1 && searchConditions[0].key === null)
+      || (searchConditions.length === 1 && searchConditions[0].value === undefined)
+      || (searchConditions.length === 1 && searchConditions[0].value === null)
       || (searchConditions.length === 1 && !searchConditions[0].value.trim())) {
       return of(null);
     }
@@ -136,11 +138,11 @@ export class CustomerService {
     this.message.create('error', message);
   }
 
-  private handleError<T> (operation = 'operation', result?: T) {
+  private handleError<T>(operation = 'operation', result?: T) {
 
     return (error: any): Observable<T> => {
       let msg = error.message;
-      if ( error.error.code !== 'undefined' && (typeof error.error.message === 'string' && error.error.message.constructor === String)) {
+      if (error.error.code !== 'undefined' && (typeof error.error.message === 'string' && error.error.message.constructor === String)) {
         msg = error.error.message;
       }
 

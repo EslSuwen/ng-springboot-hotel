@@ -1,12 +1,13 @@
-import { Injectable } from '@angular/core';
-import { Room} from './dto/Room';
+import {Injectable} from '@angular/core';
+import {Room} from '../dto/Room';
 import {Observable, of} from 'rxjs';
-import { NzMessageService} from 'ng-zorro-antd';
-import {HttpClient, HttpHeaders, HttpParams} from '@angular/common/http';
-import { catchError, tap} from 'rxjs/operators';
-import {MESSAGETEXTS} from './const/MessageConsts';
-import {SearchCondition} from './dto/SearchCondition';
-import {Result} from './dto/Result';
+import {NzMessageService} from 'ng-zorro-antd';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
+import {catchError, tap} from 'rxjs/operators';
+import {MESSAGETEXTS} from '../const/MessageConsts';
+import {SearchCondition} from '../dto/SearchCondition';
+import {Result} from '../dto/Result';
+import {environment} from '../../environments/environment';
 
 const httpOptions = {
   headers: new HttpHeaders({'Content-Type': 'application/json'})
@@ -16,16 +17,17 @@ const httpOptions = {
   providedIn: 'root'
 })
 export class RoomService {
-  private roomsUrl = 'http://localhost:8080/api/rooms';
+  private roomsUrl = `${environment.apiUrl}/api/rooms`;
 
 
   constructor(
     private http: HttpClient,
-    private message: NzMessageService) { }
+    private message: NzMessageService) {
+  }
 
 
   /**
-   * 查询所有的客房信息
+   * @description 查询所有的客房信息
    */
   getRooms(): Observable<Room[]> {
     // TODO: send the message _after_ fetching the rooms
@@ -36,7 +38,7 @@ export class RoomService {
   }
 
   /**
-   * 查询某个客房的信息
+   * @description 查询某个客房的信息
    * @param id  客房的ID
    */
   getRoom(id: number): Observable<Room> {
@@ -49,8 +51,8 @@ export class RoomService {
 
 
   /**
-   * 更新客房信息
-   * @param Room
+   * @description 更新客房信息
+   * @param room 客房信息
    */
   updateRoom(room: Room): Observable<any> {
     return this.http.put(this.roomsUrl, room, httpOptions).pipe(
@@ -60,10 +62,10 @@ export class RoomService {
   }
 
   /**
-   * 登记：创建客房信息
+   * @description 登记：创建客房信息
    * @param room   客房
    */
-  addRoom (room: Room): Observable<Result> {
+  addRoom(room: Room): Observable<Result> {
     return this.http.post<Result>(this.roomsUrl, room, httpOptions).pipe(
       tap((result) => {
         if (result.success) {
@@ -77,7 +79,7 @@ export class RoomService {
   }
 
   /**
-   * 删除客房
+   * @description 删除客房
    * @param room  客房
    */
   deleteRoom(room: Room | number): Observable<Room> {
@@ -85,7 +87,7 @@ export class RoomService {
     if (room instanceof Room) {
       id = room.id;
     } else if (typeof Room === 'number') {
-      id =  room;
+      id = room;
     }
 
     const url = `${this.roomsUrl}/${id}`;
@@ -98,17 +100,18 @@ export class RoomService {
 
 
   /**
-   * 搜索客房
-   * @param term
+   * @description 搜索客房
+   * @param conditions 搜索条件
    */
   searchRooms(conditions: SearchCondition[]): Observable<Room[]> {
     if (conditions === null
-      || (conditions.length === 1 &&  conditions[0].key === undefined)
-      || (conditions.length === 1 &&  conditions[0].key === null)
-      || (conditions.length === 1 &&  conditions[0].value === undefined)
-      || (conditions.length === 1 &&  conditions[0].value === null)) {
+      || (conditions.length === 1 && conditions[0].key === undefined)
+      || (conditions.length === 1 && conditions[0].key === null)
+      || (conditions.length === 1 && conditions[0].value === undefined)
+      || (conditions.length === 1 && conditions[0].value === null)) {
       return of([]);
-    };
+    }
+    ;
 
     let parameter = '?';
     conditions.forEach((condition) => {
@@ -124,11 +127,11 @@ export class RoomService {
   }
 
   /**
-   * 登记
-   * @param room
+   * @description 登记
+   * @param room 客房
    */
   login(room: Room): Observable<Result> {
-    if (room === null ) {
+    if (room === null) {
       return of(null);
     }
 
@@ -147,8 +150,8 @@ export class RoomService {
   }
 
   /**
-   * 退房
-   * @param roomId
+   * @description  退房
+   * @param roomId 客房号
    */
   logout(roomId: number): Observable<Result> {
     if (roomId === null || roomId <= 0) {
@@ -177,11 +180,11 @@ export class RoomService {
     this.message.create('error', message);
   }
 
-  private handleError<T> (operation = 'operation', result?: T) {
+  private handleError<T>(operation = 'operation', result?: T) {
 
     return (error: any): Observable<T> => {
       let msg = error.message;
-      if ( error.error.code !== 'undefined' && (typeof error.error.message === 'string' && error.error.message.constructor === String)) {
+      if (error.error.code !== 'undefined' && (typeof error.error.message === 'string' && error.error.message.constructor === String)) {
         msg = error.error.message;
       }
 

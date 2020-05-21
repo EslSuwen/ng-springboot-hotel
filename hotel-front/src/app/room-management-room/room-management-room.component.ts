@@ -2,7 +2,7 @@ import {Component, forwardRef, Input, OnInit} from '@angular/core';
 import {Room} from '../dto/Room';
 import {ControlValueAccessor, NG_VALUE_ACCESSOR} from '@angular/forms';
 import {Charge} from '../dto/Charge';
-import {RoomService} from '../room.service';
+import {RoomService} from '../service/room.service';
 import {Utils} from '../util/Utils';
 
 @Component({

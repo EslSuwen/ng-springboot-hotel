@@ -1,8 +1,8 @@
-import {Component, forwardRef, Input, OnInit, Output} from '@angular/core';
+import {Component, forwardRef, Input, OnInit} from '@angular/core';
 import {Observable, Subject} from 'rxjs';
 import {Room} from '../dto/Room';
 import {debounceTime, distinctUntilChanged, switchMap} from 'rxjs/operators';
-import {RoomService} from '../room.service';
+import {RoomService} from '../service/room.service';
 import {ControlValueAccessor, NG_VALUE_ACCESSOR} from '@angular/forms';
 
 @Component({
@@ -44,7 +44,7 @@ export class RoomNoSearchComponent implements OnInit, ControlValueAccessor {
       distinctUntilChanged(),
 
       // switch to new search observable each time the term changes
-      switchMap( (term: string) => this.roomService.searchRooms([{'key': 'roomNo', 'value': term}])),
+      switchMap((term: string) => this.roomService.searchRooms([{'key': 'roomNo', 'value': term}])),
     );
 
   }
@@ -58,7 +58,8 @@ export class RoomNoSearchComponent implements OnInit, ControlValueAccessor {
     this.propagateChange(this._value);
   }
 
-  propagateChange = (_: any) => {};
+  propagateChange = (_: any) => {
+  }
 
   registerOnChange(fn: any): void {
     this.propagateChange = fn;

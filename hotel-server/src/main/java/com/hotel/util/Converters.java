@@ -169,7 +169,7 @@ public class Converters {
       for (Income income : incomes) {
         IncomeDto incomeDto = new IncomeDto();
         incomeDto.setId(income.getId());
-        incomeDto.setRommNo(income.getRoom().getRoomNo());
+        incomeDto.setRoomNo(income.getRoom().getRoomNo());
         incomeDto.setIncoming(getStringPrice(income.getIncoming()));
         incomeDto.setLogoutDate(income.getLogoutDate());
         incomeDtos.add(incomeDto);

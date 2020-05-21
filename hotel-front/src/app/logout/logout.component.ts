@@ -3,8 +3,8 @@ import {
   FormBuilder,
   FormGroup, Validators
 } from '@angular/forms';
-import {CustomerService} from '../customer.service';
-import {RoomService} from '../room.service';
+import {CustomerService} from '../service/customer.service';
+import {RoomService} from '../service/room.service';
 import {SearchCondition} from '../dto/SearchCondition';
 import {Logout} from '../dto/Logout';
 import {NzNotificationService} from 'ng-zorro-antd';

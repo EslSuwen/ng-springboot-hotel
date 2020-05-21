@@ -1,10 +1,10 @@
 import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
-import {CustomerService} from '../customer.service';
+import {CustomerService} from '../service/customer.service';
 import {SearchCondition} from '../dto/SearchCondition';
 import {Customer} from '../dto/Customer';
 import {NzMessageService} from 'ng-zorro-antd';
-import {RoomService} from '../room.service';
+import {RoomService} from '../service/room.service';
 
 @Component({
   selector: 'app-customer-management',
