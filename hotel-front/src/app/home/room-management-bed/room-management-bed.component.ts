@@ -1,8 +1,8 @@
 import {Component, forwardRef, Input, OnInit} from '@angular/core';
-import {Bed} from '../dto/Bed';
-import {RoomService} from '../service/room.service';
+import {Bed} from '../../dto/Bed';
+import {RoomService} from '../../service/room.service';
 import {ControlValueAccessor, NG_VALUE_ACCESSOR} from '@angular/forms';
-import {Room} from '../dto/Room';
+import {Room} from '../../dto/Room';
 
 /**
  * 将isVisible进行双向绑定，这样外部组件在使用此组件时，可以控制显示与隐藏，否则在在此组件内隐藏之后，当再次点击时，由于外部组件的属性没有变化，不会将值再次传入此组件内，
@@ -11,7 +11,7 @@ import {Room} from '../dto/Room';
 @Component({
   selector: 'app-room-management-bed',
   templateUrl: './room-management-bed.component.html',
-  styleUrls: ['./room-management-bed.component.css'],
+  styleUrls: ['./room-management-bed.component.scss'],
   providers: [
     {
       provide: NG_VALUE_ACCESSOR,

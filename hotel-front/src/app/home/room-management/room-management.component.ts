@@ -1,12 +1,12 @@
-import { Component, OnInit } from '@angular/core';
-import {RoomService} from '../service/room.service';
-import {Room} from '../dto/Room';
-import {Bed} from '../dto/Bed';
+import {Component, OnInit} from '@angular/core';
+import {RoomService} from '../../service/room.service';
+import {Room} from '../../dto/Room';
+import {Bed} from '../../dto/Bed';
 
 @Component({
   selector: 'app-room-management',
   templateUrl: './room-management.component.html',
-  styleUrls: ['./room-management.component.css']
+  styleUrls: ['./room-management.component.scss']
 })
 export class RoomManagementComponent implements OnInit {
   pageIndex = 1;
@@ -34,9 +34,9 @@ export class RoomManagementComponent implements OnInit {
   message = {};
 
   filterRoomStatus = [
-    { text: '空房', value: '0' },
-    { text: '有客', value: '1' },
-    { text: '不可订', value: '2'},
+    {text: '空房', value: '0'},
+    {text: '有客', value: '1'},
+    {text: '不可订', value: '2'},
   ];
 
   searchRoomStatusList = [];
@@ -64,8 +64,8 @@ export class RoomManagementComponent implements OnInit {
 
     // 排序不影响条目数量
     if (this.sortKey && this.sortValue) {
-      this.dataSet = this.dataSet.sort((a, b) => (this.sortValue === 'ascend') ? (a[ this.sortKey ] > b[ this.sortKey ] ? 1 : -1)
-        : (b[ this.sortKey ] > a[ this.sortKey ] ? 1 : -1));
+      this.dataSet = this.dataSet.sort((a, b) => (this.sortValue === 'ascend') ? (a[this.sortKey] > b[this.sortKey] ? 1 : -1)
+        : (b[this.sortKey] > a[this.sortKey] ? 1 : -1));
     }
 
     this.dataSet = this.dataSet.slice((this.pageIndex - 1) * this.pageSize, (this.pageIndex - 1) * this.pageSize + this.pageSize);
@@ -120,8 +120,8 @@ export class RoomManagementComponent implements OnInit {
   }
 
   /**
-   * 更改客房状态
-   * @param data
+   * @description 更改客房状态
+   * @param data 客房信息
    */
   clickSwitch(data: any): void {
     // 如果是有客状态点击不起作用

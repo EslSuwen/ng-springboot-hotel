@@ -3,16 +3,16 @@ import {
   FormBuilder,
   FormGroup, Validators
 } from '@angular/forms';
-import {CustomerService} from '../service/customer.service';
-import {RoomService} from '../service/room.service';
-import {SearchCondition} from '../dto/SearchCondition';
-import {Logout} from '../dto/Logout';
+import {CustomerService} from '../../service/customer.service';
+import {RoomService} from '../../service/room.service';
+import {SearchCondition} from '../../dto/SearchCondition';
+import {Logout} from '../../dto/Logout';
 import {NzNotificationService} from 'ng-zorro-antd';
 
 @Component({
   selector: 'app-logout',
   templateUrl: './logout.component.html',
-  styleUrls: ['./logout.component.css']
+  styleUrls: ['./logout.component.scss']
 })
 export class LogoutComponent implements OnInit {
 

@@ -1,14 +1,14 @@
 import {Component, forwardRef, Input, OnInit} from '@angular/core';
 import {Observable, Subject} from 'rxjs';
-import {Room} from '../dto/Room';
+import {Room} from '../../dto/Room';
 import {debounceTime, distinctUntilChanged, switchMap} from 'rxjs/operators';
-import {RoomService} from '../service/room.service';
+import {RoomService} from '../../service/room.service';
 import {ControlValueAccessor, NG_VALUE_ACCESSOR} from '@angular/forms';
 
 @Component({
   selector: 'app-room-no-search',
   templateUrl: './room-no-search.component.html',
-  styleUrls: ['./room-no-search.component.css'],
+  styleUrls: ['./room-no-search.component.scss'],
   providers: [
     {
       provide: NG_VALUE_ACCESSOR,

@@ -1,16 +1,16 @@
 import { Component, OnInit} from '@angular/core';
 import {FormBuilder, FormControl, FormGroup, ValidationErrors, Validators} from '@angular/forms';
 import {Observable, Observer, Subject} from 'rxjs';
-import {Customer} from '../dto/Customer';
-import { Utils} from '../util/Utils';
-import {Room} from '../dto/Room';
-import {RoomService} from '../service/room.service';
+import {Customer} from '../../dto/Customer';
+import { Utils} from '../../util/Utils';
+import {Room} from '../../dto/Room';
+import {RoomService} from '../../service/room.service';
 import {debounceTime, distinctUntilChanged, switchMap} from 'rxjs/operators';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  styleUrls: ['./login.component.scss']
 })
 
 export class LoginComponent implements OnInit {

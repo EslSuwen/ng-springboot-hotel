@@ -1,14 +1,14 @@
 import {Component, forwardRef, Input, OnInit} from '@angular/core';
-import {Room} from '../dto/Room';
+import {Room} from '../../dto/Room';
 import {ControlValueAccessor, NG_VALUE_ACCESSOR} from '@angular/forms';
-import {Charge} from '../dto/Charge';
-import {RoomService} from '../service/room.service';
-import {Utils} from '../util/Utils';
+import {Charge} from '../../dto/Charge';
+import {RoomService} from '../../service/room.service';
+import {Utils} from '../../util/Utils';
 
 @Component({
   selector: 'app-room-management-room',
   templateUrl: './room-management-room.component.html',
-  styleUrls: ['./room-management-room.component.css'],
+  styleUrls: ['./room-management-room.component.scss'],
   providers: [
     {
       provide: NG_VALUE_ACCESSOR,

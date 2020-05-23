@@ -1,0 +1,237 @@
+<!--Main Navigation-->
+
+<header class="intro-header">
+  <!--Intro Section-->
+  <section class="view intro-2">
+    <div class="full-bg-img mask rgba-black-light">
+      <div class="container flex-center">
+        <div class="d-flex align-items-center content-height w-100">
+          <div class="row flex-center  mt-3 w-100">
+            <div class="col-md-6 text-center text-md-left mb-5">
+              <div>
+                <h2 class="h1 h1-responsive font-bold blue-text">欢迎来到实验室预约系统
+                </h2>
+                <hr class="hr-light">
+                <h6 class="wow fadeInLeft white-text">
+                  本系统适用于学生在线预约实验室，经由管理员审核后方可成功预约。
+                </h6>
+                <br>
+
+              </div>
+            </div>
+
+            <div class="col-md-6 col-xl-5 offset-xl-1 animated fadeInRight">
+              <!--Form-->
+              <mdb-card>
+                <mdb-card-body>
+                  <!--Header-->
+                  <div class="text-center">
+                    <h3>
+                      <mdb-icon fas icon="user" class="mr-2 blue-text"></mdb-icon>
+                      登录
+                    </h3>
+                    <hr class="hr-light">
+                  </div>
+                  <!--Body-->
+                  <form [formGroup]="validationForm">
+                    <div class="md-form">
+                      <input type="text" id="form5" class="form-control white-text"
+                             mdbInput mdbValidate formControlName="userFormEx" minLength="8" maxLength="25"
+                             [(ngModel)]="authModel.username">
+                      <label for="form5">
+                        <mdb-icon fas icon="user" class="active mr-1"></mdb-icon>
+                        用户名
+                      </label>
+                      <mdb-error *ngIf="userFormEx.invalid && (userFormEx.dirty || userFormEx.touched)">请输入正确的用户名
+                      </mdb-error>
+                    </div>
+                    <div class="md-form">
+                      <input type="password" id="form4" class="form-control text-white" [(ngModel)]="authModel.password"
+                             mdbValidate formControlName="passwordFormEx" minLength="10" maxLength="25" mdbInput>
+                      <label for="form4">
+                        <mdb-icon fas icon="lock" class="active mr-1"></mdb-icon>
+                        密码
+                      </label>
+                      <mdb-error *ngIf="passwordFormEx.invalid && (passwordFormEx.dirty || passwordFormEx.touched)">
+                        密码错误
+                      </mdb-error>
+                    </div>
+                    <div class="text-center">
+                      <button mdbBtn type="submit" gradient="blue" mdbWavesEffect
+                              class="waves-light"
+                              (click)="register.show()">注册
+                      </button>
+                      <button mdbBtn type="submit" gradient="blue" mdbWavesEffect
+                              class="waves-light"
+                              (click)="login()">登录
+                      </button>
+
+                    </div>
+                  </form>
+                  <div class="text-center">
+                    <div class="inline-ul text-center d-flex justify-content-center">
+                      <a class="p-2 m-2 tw-ic">
+                        <strong>Org@重庆交通大学信息学院</strong>
+                      </a>
+                    </div>
+                  </div>
+                </mdb-card-body>
+              </mdb-card>
+              <!--/.Form-->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</header>
+<!--Register Modal-->
+<div mdbModal #register="mdbModal" class="modal fade" id="frameModalTop" tabindex="-1" role="dialog"
+     aria-labelledby="myModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-notify modal-info" role="document">
+    <!--Content-->
+    <div class="modal-content text-center">
+      <!--Header-->
+      <div class="modal-header d-flex justify-content-center">
+        <h2 class="heading">注册</h2>
+      </div>
+      <form [formGroup]="registerValidationForm" class="r-input">
+        <div class="md-form">
+          <input type="text" id="form6" class="form-control"
+                 mdbInput mdbValidate formControlName="registerUserFormEx" minLength="8" maxLength="25"
+                 [(ngModel)]="registerModel.username">
+          <label for="form6">
+            <mdb-icon fas icon="user" class="active mr-1"></mdb-icon>
+            姓名
+          </label>
+          <mdb-error *ngIf="registerNameFormEx.invalid && (registerNameFormEx.dirty || registerNameFormEx.touched)">
+            请输入姓名
+          </mdb-error>
+        </div>
+        <div class="md-form">
+          <input type="text" id="form7" class="form-control"
+                 mdbInput mdbValidate formControlName="registerUserFormEx" minLength="8" maxLength="25"
+                 [(ngModel)]="registerModel.userNo">
+          <label for="form7">
+            <mdb-icon fas icon="user" class="active mr-1"></mdb-icon>
+            学号
+          </label>
+          <mdb-error *ngIf="registerUserFormEx.invalid && (registerUserFormEx.dirty || registerUserFormEx.touched)">
+            请输入学号
+          </mdb-error>
+        </div>
+        <div class="md-form">
+          <input type="password" id="form8" class="form-control" [(ngModel)]="registerModel.password"
+                 mdbValidate formControlName="registerPasswordFormEx" minLength="10" maxLength="25" mdbInput>
+          <label for="form8">
+            <mdb-icon fas icon="lock" class="active mr-1 text-black"></mdb-icon>
+            密码
+          </label>
+          <mdb-error
+            *ngIf="registerPasswordFormEx.invalid && (registerPasswordFormEx.dirty || registerPasswordFormEx.touched)">
+            请输入密码
+          </mdb-error>
+        </div>
+        <div class="md-form">
+          <input type="text" id="form9" class="form-control"
+                 mdbInput mdbValidate formControlName="registerUserFormEx" minLength="8" maxLength="25"
+                 [(ngModel)]="registerModel.userphone">
+          <label for="form9">
+            <mdb-icon fas icon="user" class="active mr-1"></mdb-icon>
+            电话
+          </label>
+          <mdb-error *ngIf="registerPhoneFormEx.invalid && (registerPhoneFormEx.dirty || registerPhoneFormEx.touched)">
+            请输入电话
+          </mdb-error>
+        </div>
+        <div class="md-form">
+          <input type="text" id="form10" class="form-control"
+                 mdbInput mdbValidate formControlName="registerUserFormEx" minLength="8" maxLength="25"
+                 [(ngModel)]="registerModel.email">
+          <label for="form10">
+            <mdb-icon fas icon="user" class="active mr-1"></mdb-icon>
+            邮箱
+          </label>
+          <mdb-error *ngIf="registerEmailFormEx.invalid && (registerEmailFormEx.dirty || registerEmailFormEx.touched)">
+            请输入邮箱
+          </mdb-error>
+        </div>
+        <div class="text-center mt-2">
+          <button mdbBtn color="info" class="waves-light" mdbWavesEffect (click)="toRegister()">注册
+            <mdb-icon fas icon="sign-in-alt" class="ml-1"></mdb-icon>
+          </button>
+        </div>
+      </form>
+      <!--Footer-->
+      <div class="modal-footer">
+        <div class="options text-right">
+          <p class="pt-1">已有账户?
+            <a (click)="register.hide()" class="blue-text">登录</a>
+          </p>
+        </div>
+        <button type="button" mdbBtn color="info" outline="true" class="ml-auto" data-dismiss="modal"
+                (click)="register.hide()" mdbWavesEffect>关闭
+        </button>
+      </div>
+    </div>
+    <!--/.Content-->
+  </div>
+</div>
+<div mdbModal #registered="mdbModal" class="modal fade top" tabindex="-1" role="dialog"
+     aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog cascading-modal modal-avatar modal-sm" role="document">
+    <!--Content-->
+    <div class="modal-content">
+
+      <!--Header-->
+      <div class="modal-header">
+        <img
+          src="../../assets/img/userAvatar.png"
+          alt="avatar" class="rounded-circle img-responsive">
+      </div>
+      <!--Body-->
+      <div class="modal-body mb-1">
+        <h5 class="mt-1 mb-2 text-center">账号：{{registerModel.username}} 注册成功！</h5>
+
+        <div class="text-center mt-4">
+          <button mdbBtn color="cyan" rounded="true" class="mt-1 waves-light" mdbWavesEffect
+                  routerLink="/home">确认进入主页
+            <mdb-icon fas icon="sign-in-alt" class="ml-1"></mdb-icon>
+          </button>
+        </div>
+      </div>
+
+    </div>
+    <!--/.Content-->
+  </div>
+</div>
+<div mdbModal #loginModal="mdbModal" class="modal fade top" tabindex="-1" role="dialog"
+     aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog cascading-modal modal-avatar modal-sm" role="document">
+    <!--Content-->
+    <div class="modal-content">
+
+      <!--Header-->
+      <div class="modal-header">
+        <img
+          src="../../assets/img/userAvatar.png"
+          alt="avatar" class="rounded-circle img-responsive">
+      </div>
+      <!--Body-->
+      <div class="modal-body mb-1">
+        <h5 class="mt-1 mb-2 text-center">账号：{{authModel.username}} 登录成功！</h5>
+
+        <div class="text-center mt-4">
+          <button mdbBtn color="cyan" rounded="true" class="mt-1 waves-light" mdbWavesEffect
+                  routerLink="/home">确认进入主页
+            <mdb-icon fas icon="sign-in-alt" class="ml-1"></mdb-icon>
+          </button>
+        </div>
+      </div>
+
+    </div>
+    <!--/.Content-->
+  </div>
+</div>
+

@@ -52,7 +52,7 @@ export class CustomerService {
 
   /**
    * 更新客户信息
-   * @param customer
+   * @param customer 客户信息
    */
   updateCustomer(customer: Customer): Observable<any> {
     return this.http.put(this.customersUrl, customer, httpOptions).pipe(

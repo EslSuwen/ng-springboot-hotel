@@ -9,7 +9,7 @@ import {RoomService} from '../service/room.service';
 @Component({
   selector: 'app-customer-management',
   templateUrl: './customer-management.component.html',
-  styleUrls: ['./customer-management.component.css']
+  styleUrls: ['./customer-management.component.scss']
 })
 export class CustomerManagementComponent implements OnInit {
   validateForm: FormGroup;
