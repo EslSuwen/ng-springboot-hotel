@@ -1,9 +1,9 @@
 package com.hotel.entity;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.util.List;
 
 /**
  * User 用户实体类
@@ -31,4 +31,10 @@ public class User {
 
   @Column(length = 36)
   private String email;
+
+  @Column(nullable = false)
+  @Enumerated(EnumType.STRING)
+  private AuthorityName authority;
+
+  @Transient private List<Authority> authorities;
 }
