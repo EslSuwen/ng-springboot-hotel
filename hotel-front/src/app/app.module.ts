@@ -20,6 +20,7 @@ import {MDBBootstrapModule} from 'angular-bootstrap-md';
 import { SigninComponent } from './signin/signin.component';
 import { ModalComponent } from './modal/modal.component';
 import { HomeComponent } from './home/home.component';
+import { SideCardComponent } from './home/side-card/side-card.component';
 
 registerLocaleData(zh);
 
@@ -37,6 +38,7 @@ registerLocaleData(zh);
     SigninComponent,
     ModalComponent,
     HomeComponent,
+    SideCardComponent,
   ],
   imports: [
     BrowserModule,

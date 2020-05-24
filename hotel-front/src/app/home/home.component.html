@@ -1,4 +1,4 @@
-<nz-layout>
+<!--<nz-layout>
   <nz-affix>
     <nz-header>
       <h2>旅馆管理系统</h2>
@@ -21,5 +21,104 @@
       </nz-footer>
     </nz-layout>
   </nz-layout>
-</nz-layout>
+</nz-layout>-->
 
+<!--Navbar-->
+<div class="container-fluid">
+  <div class="row rgba-grey-slight">
+    <!-- 左侧栏 -->
+    <div class="col-2 animated fadeInLeft px-0 mr-2" id="sidenav" *ngIf="toggleFlag">
+      <nav class="nav nav-pills flex-column light-blue lighten-5 mt-1 z-depth-2">
+        <a class="nav-link my-1 font-weight-bold flex-center mt-3 mb-3" style="font-size: large">酒店管理信息系统</a>
+        <a class=" unique-color-dark a1 "></a>
+        <a class="nav-link my-2 text-center " mdbWavesEffect routerLink="login"
+           routerLinkActive="active">
+          <mdb-icon fas icon="chalkboard-teacher" class="mr-1 amber-text" size="lg"></mdb-icon>
+          登记
+        </a>
+        <a mdbWavesEffect class="nav-link text-center my-2" routerLink="logout"
+           routerLinkActive="active">
+          <mdb-icon fas icon="scroll" class="mr-1 cyan-text" size="lg"></mdb-icon>
+          退房
+        </a>
+        <a mdbWavesEffect class="nav-link text-center my-2 " routerLink="roomManagement"
+           routerLinkActive="active">
+          <mdb-icon fas icon="cloud-upload-alt" class="mr-1 " size="lg"></mdb-icon>
+          客房信息管理
+        </a>
+        <a mdbWavesEffect class="nav-link my-2 text-center" routerLink="customerManagement"
+           routerLinkActive="active">
+          <mdb-icon fas icon="edit" class="mr-1 green-text" size="lg"></mdb-icon>
+          客人信息管理
+        </a>
+        <a mdbWavesEffect class="nav-link my-2 text-center" routerLink="/sidenav/teachtable"
+           routerLinkActive="active">
+          <mdb-icon fas icon="list-ol" class="mr-1 orange-text" size="lg"></mdb-icon>
+          教学执行计划表
+        </a>
+        <a mdbWavesEffect class="nav-link my-2 text-center" routerLink="/sidenav/apply"
+           routerLinkActive="active">
+          <mdb-icon fas icon="hand-point-right" class="mr-1 indigo-text" size="lg"></mdb-icon>
+          申请实验室
+        </a>
+      </nav>
+      <app-side-card></app-side-card>
+    </div>
+    <!-- 顶部导航 -->
+    <div class="col m-1">
+      <div class="row ">
+        <div class="col-12">
+          <!--Navbar-->
+          <div class="row aqua-gradient ">
+            <div class="my-auto">
+              <button mdbBtn type="button" class="btn btn-outline-light waves-effect" *ngIf="toggleFlag"
+                      size="sm" mdbWavesEffect (click)="onToggle()" mdbTooltip="关闭侧边栏" placement="right">
+                <mdb-icon fas icon="angle-double-left" size="lg"></mdb-icon>
+              </button>
+              <button mdbBtn type="button" gradient="purple" *ngIf="!toggleFlag" size="sm" mdbWavesEffect
+                      (click)="onToggle()" mdbTooltip="侧边栏" placement="right">
+                <mdb-icon fas icon="angle-double-right" size="lg"></mdb-icon>
+              </button>
+            </div>
+
+            <div class='ribbon mx-auto mb-2'>
+              <a mdbWavesEffect routerLink="/sidenav/personalinfo"
+                 routerLinkActive="active"><span>个人信息</span></a>
+              <a mdbWavesEffect routerLink="/sidenav/updatepassword"
+                 routerLinkActive="active"><span>修改密码</span></a>
+              <a mdbWavesEffect href='http://www.cqjtu.edu.cn/'><span>学校官网</span></a>
+              <a mdbWavesEffect href="" (click)="logout()"><span>退出登录</span></a>
+            </div>
+            <div class="my-auto">
+
+              <a nz-dropdown [nzDropdownMenu]="menu">
+                <mdb-badge color="blue" mdbDropdownToggle classInside="dropdown-toggle"
+                           class="waves-effect" mdbWavesEffect>
+                  账号 {{userName}} 已登录
+                  <nz-badge nzStatus="error"></nz-badge>
+                </mdb-badge>
+                <i nz-icon nzType="down"></i>
+              </a>
+              <nz-dropdown-menu #menu="nzDropdownMenu">
+                <a class="dropdown-item" routerLink="/sidenav/personalinfo"
+                   routerLinkActive="active">个人信息</a>
+                <a class="dropdown-item" routerLink="/sidenav/message" routerLinkActive="active">通知公告
+                  <nz-badge [nzCount]="5"></nz-badge>
+                </a>
+                <a class="dropdown-item" routerLink="/sidenav/updatepassword"
+                   routerLinkActive="active">修改密码</a>
+                <div class="divider dropdown-divider"></div>
+                <a class="dropdown-item" href="" (click)="logout()">退出登录</a>
+
+              </nz-dropdown-menu>
+            </div>
+          </div>
+          <router-outlet></router-outlet>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<nz-footer>
+  @2020 旅馆管理系统
+</nz-footer>

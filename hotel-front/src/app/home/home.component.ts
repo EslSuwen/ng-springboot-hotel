@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {AuthenticationService} from '../service/authentication.service';
 
 @Component({
   selector: 'app-home',
@@ -6,10 +7,24 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
+  toggleFlag = true;
+  userName = '';
 
-  constructor() { }
+  onToggle() {
+    this.toggleFlag = (this.toggleFlag === true) ? false : true;
+  }
 
-  ngOnInit(): void {
+  constructor(private authenticationService: AuthenticationService) {
+  }
+
+  ngOnInit() {
+
+    this.userName = this.authenticationService.getUserName();
+    this.userName = 'username';
+
+  }
+
+  logout() {
   }
 
 }

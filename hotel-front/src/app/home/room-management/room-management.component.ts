@@ -19,6 +19,10 @@ export class RoomManagementComponent implements OnInit {
   rooms = [];
   unused = 2;
 
+  // 房间搜索
+  RoomSearchValue = '';
+  RoomSearchVisible = false;
+
   // 床铺管理
   roomId: number;
   isVisible = false;
@@ -190,5 +194,15 @@ export class RoomManagementComponent implements OnInit {
       room.statusLoading = false;
       return room;
     });
+  }
+
+  RoomSearchReset(): void {
+    this.RoomSearchValue = '';
+    this.RoomSearch();
+  }
+
+  RoomSearch(): void {
+    this.RoomSearchVisible = false;
+    this.dataSet = this.rooms.filter((room) => room.roomNo.indexOf(this.RoomSearchValue) !== -1);
   }
 }
