@@ -5,6 +5,7 @@ import com.hotel.constant.RoomStatus;
 import com.hotel.constant.RoomType;
 import com.hotel.dto.*;
 import com.hotel.entity.*;
+import lombok.extern.log4j.Log4j2;
 
 import java.text.DecimalFormat;
 import java.util.ArrayList;
@@ -15,6 +16,7 @@ import java.util.List;
  * @author guangyong.yang
  * @date 2019-01-27 dto与entity之间转换
  */
+@Log4j2
 public class Converters {
 
   public static CustomerDto customer2Dto(Customer customer) {
@@ -110,6 +112,7 @@ public class Converters {
 
   public static RoomDto room2RoomDto(Room room) {
     RoomDto roomDto = new RoomDto();
+    log.info(room);
     roomDto.setId(room.getId());
     roomDto.setRoomNo(room.getRoomNo());
     roomDto.setType(room.getType().getName());
@@ -207,5 +210,16 @@ public class Converters {
     }
 
     return price;
+  }
+
+  public static UserDto user2UserDto(User user) {
+    log.info(user);
+    return UserDto.builder()
+        .id(user.getId())
+        .name(user.getName())
+        .password(user.getPassword())
+        .phone(user.getPhone())
+        .email(user.getEmail())
+        .build();
   }
 }

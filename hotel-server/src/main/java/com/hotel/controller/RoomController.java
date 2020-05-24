@@ -14,7 +14,7 @@ import com.hotel.service.CustomerService;
 import com.hotel.service.RoomService;
 import com.hotel.util.Converters;
 import io.swagger.annotations.*;
-import lombok.extern.slf4j.Slf4j;
+import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -33,10 +33,10 @@ import java.util.List;
  * @date 2019-01-20 客房restful接口
  */
 @RestController
-@Slf4j
+@Log4j2
 @CrossOrigin
 @RequestMapping("api")
-@Api(description = "客房RestFul接口")
+@Api(tags = "客房RestFul接口")
 public class RoomController {
 
   private RoomService roomService;

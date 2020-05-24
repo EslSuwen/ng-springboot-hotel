@@ -1,6 +1,6 @@
 package com.hotel.util;
 
-import lombok.extern.slf4j.Slf4j;
+import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.BeanWrapper;
 import org.springframework.beans.BeanWrapperImpl;
 import org.springframework.util.StringUtils;
@@ -16,7 +16,7 @@ import java.util.stream.Stream;
  * @date 2019-01-20
  * @description
  */
-@Slf4j
+@Log4j2
 public class BeanUtils {
 
   @SuppressWarnings("unchecked")

@@ -2,7 +2,7 @@ package com.hotel.exception;
 
 import com.hotel.constant.RetCode;
 import com.hotel.dto.ResultDto;
-import lombok.extern.slf4j.Slf4j;
+import lombok.extern.log4j.Log4j2;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.BindingResult;
@@ -21,7 +21,7 @@ import java.util.List;
  * @date 2019-01-05
  */
 @ControllerAdvice
-@Slf4j
+@Log4j2
 public class RestExceptionHandler {
 
   @ExceptionHandler({ConstraintViolationException.class, MethodArgumentNotValidException.class})

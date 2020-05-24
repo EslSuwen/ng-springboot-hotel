@@ -1,6 +1,7 @@
 package com.hotel.service.impl;
 
 import com.hotel.dto.RoomSearchCondition;
+import com.hotel.entity.Bed;
 import com.hotel.entity.Customer;
 import com.hotel.entity.Room;
 import com.hotel.repository.BedRepository;
@@ -131,7 +132,7 @@ public class RoomServiceImpl implements RoomService {
 
   @Override
   public Room updateRoom(Room room) {
-    /* Room currentInstance = roomRepository.findOne(room.getId());
+    Room currentInstance = roomRepository.getOne(room.getId());
     // 删除床铺
     List<Bed> beds = currentInstance.getBeds();
     if (beds != null && beds.size() > 0) {
@@ -148,7 +149,7 @@ public class RoomServiceImpl implements RoomService {
         }
 
         if (!exist) {
-          bedRepository.delete(bed.getId());
+          bedRepository.deleteById(bed.getId());
         }
       }
     }
@@ -161,8 +162,7 @@ public class RoomServiceImpl implements RoomService {
     // 支持部分更新
     String[] nullPropertyNames = BeanUtils.getNullPropertyNames(room);
     org.springframework.beans.BeanUtils.copyProperties(room, currentInstance, nullPropertyNames);
-    return roomRepository.save(currentInstance);*/
-    return null;
+    return roomRepository.save(currentInstance);
   }
 
   private boolean containField(String filedName, RoomSearchCondition condition, Customer customer) {

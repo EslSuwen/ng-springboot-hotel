@@ -11,7 +11,7 @@ import com.hotel.util.Converters;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
-import lombok.extern.slf4j.Slf4j;
+import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -28,10 +28,10 @@ import java.util.List;
  * @date 2019-01-27 客人ResultFul接口
  */
 @RestController
-@Slf4j
+@Log4j2
 @CrossOrigin
 @RequestMapping("api")
-@Api(description = "客人RestFul接口")
+@Api(tags = "客人RestFul接口")
 public class CustomerController {
 
   private final CustomerService customerService;
