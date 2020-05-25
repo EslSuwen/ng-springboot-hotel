@@ -6,12 +6,14 @@ import {RoomManagementComponent} from './home/room-management/room-management.co
 import {CustomerManagementComponent} from './customer-management/customer-management.component';
 import {SigninComponent} from './signin/signin.component';
 import {HomeComponent} from './home/home.component';
+import {CanActivateAuthGuard} from './auth/can-activate.authguard';
 
 const routes: Routes = [
   {path: '', redirectTo: '/signin', pathMatch: 'full'},
   {path: 'signin', component: SigninComponent},
   {
     path: 'home', component: HomeComponent,
+    canActivate: [CanActivateAuthGuard],
     children: [
       {
         path: '',

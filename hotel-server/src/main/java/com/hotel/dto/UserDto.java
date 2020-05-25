@@ -1,7 +1,11 @@
 package com.hotel.dto;
 
+import com.hotel.entity.Authority;
+import com.hotel.constant.AuthorityName;
 import lombok.Builder;
 import lombok.Data;
+
+import java.util.List;
 
 /**
  * UserDto 用户dto
@@ -22,4 +26,8 @@ public class UserDto {
   private String phone;
 
   private String email;
+
+  private AuthorityName authority;
+
+  private List<Authority> authorities;
 }

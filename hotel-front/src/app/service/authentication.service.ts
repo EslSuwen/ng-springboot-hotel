@@ -14,29 +14,26 @@ const httpOptions = {
 @Injectable({providedIn: 'root'})
 export class AuthenticationService {
   private tokenParsed: any;
-  private teacher: User;
 
   constructor(private http: HttpClient) {
   }
 
-  login(no: string, pass: string, img: string): Observable<boolean> {
-    return this.http.post<any>(`${environment.apiUrl}/api/auth`, JSON.stringify({
-      userNo: no,
+  login(id: string, pass: string): Observable<boolean> {
+    return this.http.post<any>(`${environment.apiUrl}/auth/login`, JSON.stringify({
+      userId: id,
       password: pass,
-      imgCode: img
     }), httpOptions).pipe(
       tap(response => {
-        if (response && response.token) {
+        if (response.success) {
           // login successful, store username and jwt token in local storage to keep user logged in between page refreshes
-          const tokenParsed = this.decodeToken(response.token);
-          const teacher: User = response.teacher;
-          console.log(response.teacher);
-          localStorage.setItem('currentUserInfo', JSON.stringify(teacher));
+          const tokenParsed = this.decodeToken(response.data.token);
+          const user: User = response.data.user;
+          console.log(user);
+          localStorage.setItem('currentUserInfo', JSON.stringify(user));
           localStorage.setItem('currentUser', JSON.stringify({
-            userNo: no,
-            token: response.token,
+            userId: id,
+            token: response.data.token,
             expire: JSON.parse(tokenParsed).exp,
-            // tslint:disable-next-line: object-literal-shorthand
             tokenParsed: tokenParsed
           }));
           return of(true);
@@ -68,14 +65,14 @@ export class AuthenticationService {
     return currentUser ? currentUser.token : '';
   }
 
-  getUserNo(): string {
+  getUserId(): string {
     const currentUser = this.getCurrentUser();
-    return currentUser ? currentUser.userNo : '';
+    return currentUser ? currentUser.userId : '';
   }
 
   getUserName(): string {
     const currentUser = this.getCurrentUserInfo();
-    return currentUser ? currentUser.tname : '';
+    return currentUser ? currentUser.name : '';
   }
 
   logout(): void {

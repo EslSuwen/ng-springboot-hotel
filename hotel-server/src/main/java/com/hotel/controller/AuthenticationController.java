@@ -1,10 +1,11 @@
 package com.hotel.controller;
 
-import com.hotel.constant.RetCode;
+import com.hotel.constant.ReturnCode;
 import com.hotel.dto.ResultDto;
 import com.hotel.entity.AuthenticationRequest;
 import com.hotel.entity.AuthenticationResponse;
 import com.hotel.service.UserService;
+import com.hotel.util.Converters;
 import com.hotel.util.JwtTokenUtil;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -36,7 +37,7 @@ import javax.servlet.http.HttpServletRequest;
  */
 @Api(tags = "用户验证-控制器")
 @RestController
-@RequestMapping(value = "${api.base-path}", produces = MediaType.APPLICATION_JSON_VALUE)
+@RequestMapping(value = "/auth", produces = MediaType.APPLICATION_JSON_VALUE)
 @Log4j2
 public class AuthenticationController {
 
@@ -58,7 +59,7 @@ public class AuthenticationController {
   }
 
   @ApiOperation(value = "用户验证", notes = "进行用户验证，成功返回 token,失败返回空。")
-  @PostMapping("/auth")
+  @PostMapping("/login")
   public ResponseEntity<ResultDto> login(
       @NonNull @RequestBody AuthenticationRequest authRequest, HttpServletRequest request) {
     log.info(authRequest);
@@ -66,18 +67,18 @@ public class AuthenticationController {
     Authentication authentication =
         authenticationManager.authenticate(
             new UsernamePasswordAuthenticationToken(
-                authRequest.getUserNo(), authRequest.getPassword()));
+                authRequest.getUserId(), authRequest.getPassword()));
     SecurityContextHolder.getContext().setAuthentication(authentication);
 
-    UserDetails userDetails = userDetailsService.loadUserByUsername(authRequest.getUserNo());
+    UserDetails userDetails = userDetailsService.loadUserByUsername(authRequest.getUserId());
     String token = jwtTokenUtil.generate(userDetails);
     if (token == null) {
       return new ResponseEntity<>(
           ResultDto.builder()
               .success(false)
-              .code(RetCode.RETCODE_20003)
-              .message(RetCode.RETCODE_20003_MSG)
-              .data(null)
+              .code(ReturnCode.RETURN_CODE_40002.getCode())
+              .message(ReturnCode.RETURN_CODE_40002.getMessage())
+              .data(new AuthenticationResponse())
               .build(),
           HttpStatus.NOT_FOUND);
     }
@@ -85,9 +86,13 @@ public class AuthenticationController {
     return new ResponseEntity<>(
         ResultDto.builder()
             .success(true)
-            .code(RetCode.RETCODE_20003)
-            .message(RetCode.RETCODE_20003_MSG)
-            .data(new AuthenticationResponse())
+            .code(ReturnCode.RETURN_CODE_10001.getCode())
+            .message(ReturnCode.RETURN_CODE_10001.getMessage())
+            .data(
+                new AuthenticationResponse(
+                    token,
+                    Converters.user2UserDto(
+                        userService.getById(Integer.parseInt(authRequest.getUserId())))))
             .build(),
         HttpStatus.OK);
   }

@@ -14,7 +14,7 @@ import lombok.Data;
 @ApiModel(description = "验证请求接收实体")
 public class AuthenticationRequest {
   @ApiModelProperty(value = "用户账号", required = true)
-  private String userNo;
+  private String userId;
 
   @ApiModelProperty(position = 1, value = "用户密码", required = true)
   private String password;

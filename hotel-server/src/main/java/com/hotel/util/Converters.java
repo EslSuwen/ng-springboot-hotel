@@ -220,6 +220,8 @@ public class Converters {
         .password(user.getPassword())
         .phone(user.getPhone())
         .email(user.getEmail())
+        .authority(user.getAuthority())
+        .authorities(user.getAuthorities())
         .build();
   }
 }

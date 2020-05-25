@@ -1,5 +1,6 @@
 package com.hotel.entity;
 
+import com.hotel.constant.AuthorityName;
 import lombok.Data;
 
 import javax.persistence.*;

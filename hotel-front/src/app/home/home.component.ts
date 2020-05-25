@@ -20,8 +20,7 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
 
     this.userName = this.authenticationService.getUserName();
-    this.userName = 'username';
-
+    console.log(this.authenticationService.getCurrentUserInfo());
   }
 
   logout() {

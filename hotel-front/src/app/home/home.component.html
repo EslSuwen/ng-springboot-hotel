@@ -89,25 +89,28 @@
             </div>
             <div class="my-auto">
 
-              <a nz-dropdown [nzDropdownMenu]="menu">
+              <a nz-dropdown nzTrigger="click" [nzDropdownMenu]="nzmenu">
                 <mdb-badge color="blue" mdbDropdownToggle classInside="dropdown-toggle"
                            class="waves-effect" mdbWavesEffect>
-                  账号 {{userName}} 已登录
+                  {{userName}} 已登录
                   <nz-badge nzStatus="error"></nz-badge>
                 </mdb-badge>
-                <i nz-icon nzType="down"></i>
               </a>
-              <nz-dropdown-menu #menu="nzDropdownMenu">
-                <a class="dropdown-item" routerLink="/sidenav/personalinfo"
-                   routerLinkActive="active">个人信息</a>
-                <a class="dropdown-item" routerLink="/sidenav/message" routerLinkActive="active">通知公告
-                  <nz-badge [nzCount]="5"></nz-badge>
-                </a>
-                <a class="dropdown-item" routerLink="/sidenav/updatepassword"
-                   routerLinkActive="active">修改密码</a>
-                <div class="divider dropdown-divider"></div>
-                <a class="dropdown-item" href="" (click)="logout()">退出登录</a>
-
+              <nz-dropdown-menu #nzmenu="nzDropdownMenu">
+                <ul nz-menu>
+                  <li nz-menu-item routerLink="user-info"
+                      routerLinkActive="active">个人信息
+                  </li>
+                  <li nz-menu-item routerLink="message" routerLinkActive="active">通知
+                    <nz-badge [nzCount]="5"></nz-badge>
+                  </li>
+                  <li nz-menu-divider></li>
+                  <li nz-menu-item routerLink="update-password"
+                      routerLinkActive="active">修改密码
+                  </li>
+                  <li nz-menu-divider></li>
+                  <li nz-menu-item (click)="logout()">退出登录</li>
+                </ul>
               </nz-dropdown-menu>
             </div>
           </div>

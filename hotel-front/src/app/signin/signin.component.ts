@@ -1,7 +1,6 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {Router} from '@angular/router';
-import {environment} from '../../environments/environment';
 import {AuthenticationService} from '../service/authentication.service';
 import {ModalComponent} from '../modal/modal.component';
 
@@ -16,12 +15,11 @@ export class SigninComponent implements OnInit {
   @ViewChild('registered', {static: true}) registered: ModalComponent;
   @ViewChild('loginModal', {static: true}) loginModal: ModalComponent;
 
-
+  username: string;
   validationForm: FormGroup;
   registerValidationForm: FormGroup;
   authModel: any = {};
   registerModel: any = {};
-  imgUrl = `${environment.apiUrl}/api/createImageCode`;
 
   constructor(
     public fb: FormBuilder,
@@ -69,37 +67,21 @@ export class SigninComponent implements OnInit {
     return this.registerValidationForm.get('registerEmailFormEx');
   }
 
-  onSubmit() {
-    // this.validationForm.controls.input.markAsTouched();
-  }
 
   ngOnInit() {
-    this.authenticationService.logout();
+    this.username = this.authenticationService.getUserName();
 
   }
 
   login() {
-    this.loginModal.show();
-    // this.router.navigate(['home']);
-    /*    this.authenticationService.login(this.authModel.username, this.authModel.password, this.authModel.imgCode)
-          .subscribe(result => {
-            // 判断验证码是否输入正确
-            this.username = this.authenticationService.getUserName();
-            const judge = this.authenticationService.isLoggedIn();
-            if (result) {
-              // login successful
-              if (judge) {
-
-              } else {
-                // 验证码输入错误
-                alert('验证码错误');
-              }
-
-            } else {
-              // login failed
-              alert('Username or password is incorrect');
-            }
-          });*/
+    this.authenticationService.login(this.authModel.username, this.authModel.password).subscribe(result => {
+      if (result) {
+        this.username = this.authenticationService.getUserName();
+        this.loginModal.show();
+      } else {
+        alert('账号或密码错误！');
+      }
+    });
   }
 
   toRegister() {

@@ -25,6 +25,11 @@ public class UserServiceImpl implements UserService {
   }
 
   @Override
+  public User getById(Integer id) {
+    return userRepository.getOne(id);
+  }
+
+  @Override
   public User getUserByIdAndPassword(Integer id, String password) {
     User user = userRepository.getOne(id);
     return user.getPassword().equals(password) ? user : null;

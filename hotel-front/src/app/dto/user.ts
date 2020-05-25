@@ -1,19 +1,18 @@
 // 用户个人信息类
 export class User {
   // 工号
-  uid: string;
+  id: number;
   // 用户姓名
-  uname: string;
+  name: string;
   // 用户电话 String
-  uphone: string;
+  password: string;
   // 用户邮箱
-  uemail: string;
+  phone: string;
   // 密码
-  upassword: string;
+  email: string;
   // 权限（是否为管理员）
-  ulimit: number;
+  authority: string;
 }
-
 
 /**
  * 用户消息实体

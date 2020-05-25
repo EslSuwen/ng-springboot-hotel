@@ -1,4 +1,4 @@
-package com.hotel.entity;
+package com.hotel.constant;
 
 /**
  * AuthorityName 用户权限枚举

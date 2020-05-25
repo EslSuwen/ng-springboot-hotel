@@ -1,5 +1,6 @@
 package com.hotel.entity;
 
+import com.hotel.dto.UserDto;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.AllArgsConstructor;
@@ -24,5 +25,5 @@ public class AuthenticationResponse {
   private String token;
 
   @ApiModelProperty(position = 1, value = "登录用户信息")
-  User user;
+  UserDto user;
 }
