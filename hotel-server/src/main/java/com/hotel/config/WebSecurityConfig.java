@@ -21,7 +21,7 @@ import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.CorsConfigurationSource;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 
-import static org.springframework.http.HttpMethod.*;
+import static org.springframework.http.HttpMethod.OPTIONS;
 
 /**
  * WebSecurityConfig Spring Security 配置。 在 Spring Boot 2.0 中必须覆盖 authenticationManagerBean ()
@@ -102,12 +102,6 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         .permitAll()
         .antMatchers(OPTIONS, "/**")
         .permitAll()
-        .antMatchers(POST, apiPath)
-        .hasRole(ROLE_ADMIN)
-        .antMatchers(PUT, apiPath)
-        .hasRole(ROLE_ADMIN)
-        .antMatchers(DELETE, "/**")
-        .hasRole(ROLE_ADMIN)
         .antMatchers(WHITE_LIST)
         .permitAll()
         .anyRequest()

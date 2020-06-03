@@ -13,7 +13,7 @@ const routes: Routes = [
   {path: 'signin', component: SigninComponent},
   {
     path: 'home', component: HomeComponent,
-    canActivate: [CanActivateAuthGuard],
+    // canActivate: [CanActivateAuthGuard],
     children: [
       {
         path: '',

@@ -74,6 +74,7 @@ export class SigninComponent implements OnInit {
   }
 
   login() {
+    this.loginModal.show();
     this.authenticationService.login(this.authModel.username, this.authModel.password).subscribe(result => {
       if (result) {
         this.username = this.authenticationService.getUserName();
