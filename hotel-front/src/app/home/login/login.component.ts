@@ -140,7 +140,8 @@ export class LoginComponent implements OnInit {
   searchIdCard(idCard: string) {
     this.userListSlice = this.userList.filter(each => each.idCard.indexOf(idCard) !== -1);
     if (this.userListSlice.length === 1) {
-      this.loginModel = this.userListSlice[0];
+      console.log(this.userListSlice);
+      this.validateForm.patchValue({name: this.userListSlice[0].name, phoneNo: this.userListSlice[0].phone});
     }
   }
 

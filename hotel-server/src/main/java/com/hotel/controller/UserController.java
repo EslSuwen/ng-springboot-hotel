@@ -1,6 +1,7 @@
 package com.hotel.controller;
 
 import com.hotel.constant.RetCode;
+import com.hotel.constant.ReturnCode;
 import com.hotel.dto.ResultDto;
 import com.hotel.entity.User;
 import com.hotel.service.UserService;
@@ -61,11 +62,41 @@ public class UserController {
    * @author suwen
    * @date 2020/2/6 3:10 下午
    */
-  @PostMapping(value = "/update")
-  public String update(User user) {
+  @PutMapping(value = "/update")
+  public ResponseEntity<ResultDto> update(@RequestBody User user) {
 
     userService.updateById(user);
-    return "";
+    return new ResponseEntity<>(
+        ResultDto.builder()
+            .success(true)
+            .code(RetCode.RETCODE_20002)
+            .message(RetCode.RETCODE_20002_MSG)
+            .build(),
+        HttpStatus.OK);
+  }
+
+  /**
+   * 用户修改密码
+   *
+   * @param id 编号
+   * @param oldPw 当前密码
+   * @param newPw 新密码
+   * @author suwen
+   * @date 2020/4/1 下午7:56
+   */
+  @PutMapping("/updatePassword")
+  public ResponseEntity<ResultDto> updatePassword(
+      @ApiParam(value = "编号", required = true) @RequestParam Integer id,
+      @ApiParam(value = "当前密码", required = true) @RequestParam String oldPw,
+      @ApiParam(value = "新密码", required = true) @RequestParam String newPw) {
+
+    return new ResponseEntity<>(
+        ResultDto.builder()
+            .success(userService.updatePassword(id, oldPw, newPw))
+            .code(ReturnCode.RETURN_CODE_10004.getCode())
+            .message("教师修改密码成功")
+            .build(),
+        HttpStatus.OK);
   }
 
   /**

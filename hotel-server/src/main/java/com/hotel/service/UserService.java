@@ -60,4 +60,16 @@ public interface UserService {
    * @date 2020/5/24 下午3:32
    */
   void updateById(User user);
+
+  /**
+   * 通过id修改密码
+   *
+   * @author suwen
+   * @date 2020/6/8 20:14 下午
+   * @param id 工号
+   * @param oldPw 旧密码
+   * @param newPw 新密码
+   * @return 状态码
+   */
+  boolean updatePassword(Integer id, String oldPw, String newPw);
 }

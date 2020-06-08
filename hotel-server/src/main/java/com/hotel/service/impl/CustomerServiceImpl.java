@@ -43,7 +43,7 @@ public class CustomerServiceImpl implements CustomerService {
 
   @Override
   public Customer update(Customer customer) {
-        Customer currentInstance = customerRepository.findById(customer.getId()).get();
+    Customer currentInstance = customerRepository.findById(customer.getId()).get();
     // 支持部分更新
     String[] nullPropertyNames = BeanUtils.getNullPropertyNames(customer);
     org.springframework.beans.BeanUtils.copyProperties(
@@ -58,7 +58,6 @@ public class CustomerServiceImpl implements CustomerService {
 
   @Override
   public Customer findOne(Integer id) {
-    //    return customerRepository.findOne(id);
-    return null;
+    return customerRepository.findById(id).get();
   }
 }

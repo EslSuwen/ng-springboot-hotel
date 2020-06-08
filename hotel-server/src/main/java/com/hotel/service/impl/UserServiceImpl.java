@@ -49,4 +49,15 @@ public class UserServiceImpl implements UserService {
   public void updateById(User user) {
     userRepository.save(user);
   }
+
+  @Override
+  public boolean updatePassword(Integer id, String oldPw, String newPw) {
+    User user = userRepository.findById(id).get();
+    if (oldPw.equals(user.getPassword())) {
+      user.setPassword(newPw);
+      userRepository.save(user);
+      return true;
+    }
+    return false;
+  }
 }

@@ -110,6 +110,8 @@ public class CustomerController {
   public ResponseEntity<ResultDto> deleteCustomer(
       @NotNull(message = "客人ID号不能为空") @PathVariable("id") Integer id) {
 
+    log.info(id);
+
     ResponseEntity<ResultDto> result = checkCustomerExist(id);
     if (result != null) {
       return result;

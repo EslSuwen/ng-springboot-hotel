@@ -1,10 +1,10 @@
 import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
-import {CustomerService} from '../service/customer.service';
-import {SearchCondition} from '../dto/SearchCondition';
-import {Customer} from '../dto/Customer';
+import {CustomerService} from '../../service/customer.service';
+import {SearchCondition} from '../../dto/SearchCondition';
+import {Customer} from '../../dto/Customer';
 import {NzMessageService} from 'ng-zorro-antd';
-import {RoomService} from '../service/room.service';
+import {RoomService} from '../../service/room.service';
 
 @Component({
   selector: 'app-customer-management',
@@ -22,29 +22,29 @@ export class CustomerManagementComponent implements OnInit {
               private roomService: RoomService,
               private message: NzMessageService) {
     this.validateForm = this.fb.group({
-      name:     [''],
-      idCard:   ['', [Validators.pattern(/(^\d{15}$)|(^\d{18}$)|(^\d{17}(\d|X|x)$)/)]],
-      phoneNo:  ['', [Validators.pattern(/(^[1][3,4,5,7,8][0-9]{9}$)/)]],
+      name: [''],
+      idCard: ['', [Validators.pattern(/(^\d{15}$)|(^\d{18}$)|(^\d{17}(\d|X|x)$)/)]],
+      phoneNo: ['', [Validators.pattern(/(^[1][3,4,5,7,8][0-9]{9}$)/)]],
     });
   }
 
   updateEditCache(edit: boolean = false): void {
     this.dataSet.forEach(item => {
-      if (!this.editCache[ item.key ]) {
-        this.editCache[ item.key ] = {
+      if (!this.editCache[item.key]) {
+        this.editCache[item.key] = {
           edit: edit,
-          data: { ...item }
+          data: {...item}
         };
       }
     });
   }
 
   startEdit(key: string): void {
-    this.editCache[ key ].edit = true;
+    this.editCache[key].edit = true;
   }
 
   cancelEdit(key: string): void {
-    this.editCache[ key ].edit = false;
+    this.editCache[key].edit = false;
   }
 
   delete(key: number): void {
@@ -52,7 +52,7 @@ export class CustomerManagementComponent implements OnInit {
     const customer = this.dataSet[index];
     customer.isSpinning = true;
     // 调用删除服务
-    this.customerService.deleteCustomer(this.editCache[ key ].data.id).subscribe(result => {
+    this.customerService.deleteCustomer(this.editCache[key].data.id).subscribe(result => {
       if (result !== undefined && result.success !== undefined && result.success) {
         this.dataSet = this.dataSet.filter(d => d.key !== key);
         delete this.editCache[key];
@@ -63,30 +63,30 @@ export class CustomerManagementComponent implements OnInit {
 
   saveEdit(key: number): void {
 
-    if (!this.check(this.editCache[ key ].data)) {
+    if (!this.check(this.editCache[key].data)) {
       return;
     }
 
     // 判断有没有更新
     const index = this.dataSet.findIndex(item => item.key === key);
     const customer = this.dataSet[index];
-    const editCustomer = this.editCache[ key ].data;
+    const editCustomer = this.editCache[key].data;
     if (customer.id === editCustomer.id
-    && customer.name === editCustomer.name
-    && customer.idCard === editCustomer.idCard
-    && customer.phoneNo === editCustomer.phoneNo
-    && customer.comment === editCustomer.comment) {
-      this.editCache[ key ].edit = false;
+      && customer.name === editCustomer.name
+      && customer.idCard === editCustomer.idCard
+      && customer.phoneNo === editCustomer.phoneNo
+      && customer.comment === editCustomer.comment) {
+      this.editCache[key].edit = false;
       return;
     }
 
     // 调用修改服务
     customer.isSpinning = true;
-    this.customerService.updateCustomer(this.editCache[ key ].data as Customer).subscribe(result => {
+    this.customerService.updateCustomer(this.editCache[key].data as Customer).subscribe(result => {
       if (result !== undefined && result.success !== undefined && result.success) {
         const index = this.dataSet.findIndex(item => item.key === key);
-        Object.assign(this.dataSet[ index ], result.data);
-        this.editCache[ key ].edit = false;
+        Object.assign(this.dataSet[index], result.data);
+        this.editCache[key].edit = false;
       }
       customer.isSpinning = false;
     });
@@ -144,8 +144,8 @@ export class CustomerManagementComponent implements OnInit {
         conditions.push(searchCondition);
       }
 
-      this.validateForm.controls[ key ].markAsDirty();
-      this.validateForm.controls[ key ].updateValueAndValidity();
+      this.validateForm.controls[key].markAsDirty();
+      this.validateForm.controls[key].updateValueAndValidity();
     }
 
     this.customerService.searchCustomers(conditions).subscribe(result => {

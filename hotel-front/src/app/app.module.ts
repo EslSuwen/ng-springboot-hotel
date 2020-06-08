@@ -13,14 +13,18 @@ import {registerLocaleData} from '@angular/common';
 import zh from '@angular/common/locales/zh';
 import {AppRoutingModule} from './app-routing.module';
 import {RoomManagementComponent} from './home/room-management/room-management.component';
-import {CustomerManagementComponent} from './customer-management/customer-management.component';
+import {CustomerManagementComponent} from './home/customer-management/customer-management.component';
 import {RoomManagementBedComponent} from './home/room-management-bed/room-management-bed.component';
 import {RoomManagementRoomComponent} from './home/room-management-room/room-management-room.component';
 import {MDBBootstrapModule} from 'angular-bootstrap-md';
-import { SigninComponent } from './signin/signin.component';
-import { ModalComponent } from './modal/modal.component';
-import { HomeComponent } from './home/home.component';
-import { SideCardComponent } from './home/side-card/side-card.component';
+import {SigninComponent} from './signin/signin.component';
+import {ModalComponent} from './modal/modal.component';
+import {HomeComponent} from './home/home.component';
+import {SideCardComponent} from './home/side-card/side-card.component';
+import {MemberComponent} from './home/member/member.component';
+import {UpdatePasswordComponent} from './home/update-password/update-password.component';
+import {UserInfoComponent} from './home/user-info/user-info.component';
+import {HasRoleDirective} from './auth/has-role.directive';
 
 registerLocaleData(zh);
 
@@ -39,6 +43,10 @@ registerLocaleData(zh);
     ModalComponent,
     HomeComponent,
     SideCardComponent,
+    MemberComponent,
+    UpdatePasswordComponent,
+    UserInfoComponent,
+    HasRoleDirective,
   ],
   imports: [
     BrowserModule,
