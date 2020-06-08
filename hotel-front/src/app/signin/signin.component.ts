@@ -3,6 +3,7 @@ import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {Router} from '@angular/router';
 import {AuthenticationService} from '../service/authentication.service';
 import {ModalComponent} from '../modal/modal.component';
+import {User} from '../dto/user';
 
 @Component({
   selector: 'app-login',
@@ -19,7 +20,7 @@ export class SigninComponent implements OnInit {
   validationForm: FormGroup;
   registerValidationForm: FormGroup;
   authModel: any = {};
-  registerModel: any = {};
+  registerModel = new User();
 
   constructor(
     public fb: FormBuilder,
@@ -74,7 +75,6 @@ export class SigninComponent implements OnInit {
   }
 
   login() {
-    this.loginModal.show();
     this.authenticationService.login(this.authModel.username, this.authModel.password).subscribe(result => {
       if (result) {
         this.username = this.authenticationService.getUserName();
@@ -87,6 +87,14 @@ export class SigninComponent implements OnInit {
 
   toRegister() {
     this.register.hide();
+    this.authenticationService.register(this.registerModel).subscribe(result => {
+      if (result) {
+        this.username = this.authenticationService.getUserName();
+        this.registered.show();
+      } else {
+        alert('注册失败！');
+      }
+    });
     this.registered.show();
   }
 

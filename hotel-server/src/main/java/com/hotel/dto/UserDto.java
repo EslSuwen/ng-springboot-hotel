@@ -1,7 +1,7 @@
 package com.hotel.dto;
 
-import com.hotel.entity.Authority;
 import com.hotel.constant.AuthorityName;
+import com.hotel.entity.Authority;
 import lombok.Builder;
 import lombok.Data;
 
@@ -24,6 +24,8 @@ public class UserDto {
   private String password;
 
   private String phone;
+
+  private String idCard;
 
   private String email;
 

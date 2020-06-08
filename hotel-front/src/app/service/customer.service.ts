@@ -8,6 +8,7 @@ import {MESSAGETEXTS} from '../const/MessageConsts';
 import {SearchCondition} from '../dto/SearchCondition';
 import {Result} from '../dto/Result';
 import {environment} from '../../environments/environment';
+import {User} from '../dto/user';
 
 const httpOptions = {
   headers: new HttpHeaders({'Content-Type': 'application/json'})
@@ -18,6 +19,7 @@ const httpOptions = {
 })
 export class CustomerService {
   private customersUrl = `${environment.apiUrl}/api/customers`;
+  private USER_URL = `${environment.apiUrl}/user`;
 
 
   constructor(
@@ -25,6 +27,21 @@ export class CustomerService {
     private message: NzMessageService) {
   }
 
+  /**
+   * 获得所有用户信息
+   *
+   * @return 用户信息数组
+   * @author suwen
+   * @date 2020/6/5 下午3:27
+   */
+  getUser(): Observable<User[]> {
+    const url = `${this.USER_URL}/getAllInfo`;
+
+    return this.http.get<User[]>(url).pipe(
+      tap(_ => this.success(MESSAGETEXTS.FETCH_SUCCESS)),
+      catchError(this.handleError<User[]>('查询所有用户信息', []))
+    );
+  }
 
   /**
    * 查询所有的客户信息

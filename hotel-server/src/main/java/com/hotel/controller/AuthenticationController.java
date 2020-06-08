@@ -2,8 +2,10 @@ package com.hotel.controller;
 
 import com.hotel.constant.ReturnCode;
 import com.hotel.dto.ResultDto;
+import com.hotel.dto.UserDto;
 import com.hotel.entity.AuthenticationRequest;
 import com.hotel.entity.AuthenticationResponse;
+import com.hotel.entity.User;
 import com.hotel.service.UserService;
 import com.hotel.util.Converters;
 import com.hotel.util.JwtTokenUtil;
@@ -93,6 +95,41 @@ public class AuthenticationController {
                     token,
                     Converters.user2UserDto(
                         userService.getById(Integer.parseInt(authRequest.getUserId())))))
+            .build(),
+        HttpStatus.OK);
+  }
+
+  @ApiOperation(value = "用户注册", notes = "进行用户注册，成功返回 token,失败返回空。")
+  @PostMapping("/register")
+  public ResponseEntity<ResultDto> register(@NonNull @RequestBody UserDto userDto) {
+    log.info(userDto);
+
+    User user = userService.saveUser(Converters.userDto2User(userDto));
+
+    Authentication authentication =
+        authenticationManager.authenticate(
+            new UsernamePasswordAuthenticationToken(user.getId(), user.getPassword()));
+    SecurityContextHolder.getContext().setAuthentication(authentication);
+
+    UserDetails userDetails = userDetailsService.loadUserByUsername(user.getId().toString());
+    String token = jwtTokenUtil.generate(userDetails);
+    if (token == null) {
+      return new ResponseEntity<>(
+          ResultDto.builder()
+              .success(false)
+              .code(ReturnCode.RETURN_CODE_40002.getCode())
+              .message("注册失败")
+              .data(userDto)
+              .build(),
+          HttpStatus.NOT_FOUND);
+    }
+
+    return new ResponseEntity<>(
+        ResultDto.builder()
+            .success(true)
+            .code(ReturnCode.RETURN_CODE_10001.getCode())
+            .message(ReturnCode.RETURN_CODE_10001.getMessage())
+            .data(new AuthenticationResponse(token, Converters.user2UserDto(user)))
             .build(),
         HttpStatus.OK);
   }

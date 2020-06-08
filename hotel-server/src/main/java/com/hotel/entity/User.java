@@ -21,17 +21,20 @@ public class User {
   @GeneratedValue(strategy = GenerationType.AUTO)
   private Integer id;
 
-  @Column(length = 20)
+  @Column(nullable = false, length = 20)
   private String name;
 
-  @Column(length = 20)
+  @Column(nullable = false, length = 20)
   private String password;
 
-  @Column(length = 20)
+  @Column(nullable = false, length = 20)
   private String phone;
 
   @Column(length = 36)
   private String email;
+
+  @Column(nullable = false, length = 18)
+  private String idCard;
 
   @Column(nullable = false)
   @Enumerated(EnumType.STRING)

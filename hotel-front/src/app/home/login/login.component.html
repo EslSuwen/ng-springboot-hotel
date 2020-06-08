@@ -3,7 +3,8 @@
     <nz-form-label [nzSpan]="7" nzRequired>姓名</nz-form-label>
     <nz-form-control [nzSpan]="12" nzHasFeedback>
       <input nz-input formControlName="name" placeholder="客人姓名">
-      <nz-form-explain *ngIf="validateForm.get('name').dirty && validateForm.get('name').errors || validateForm.get('name').pending ">
+      <nz-form-explain
+        *ngIf="validateForm.get('name').dirty && validateForm.get('name').errors || validateForm.get('name').pending ">
         <ng-container *ngIf="validateForm.get('name').hasError('required')">
           请填写客人姓名!
         </ng-container>
@@ -20,7 +21,13 @@
   <nz-form-item>
     <nz-form-label [nzSpan]="7" nzRequired>身份证号</nz-form-label>
     <nz-form-control [nzSpan]="12" nzHasFeedback>
-      <input nz-input formControlName="idCard" placeholder="客人身份证编号" maxlength="18">
+      <input nz-input formControlName="idCard" placeholder="客人身份证编号" maxlength="18" #idCardBox
+             (input)="searchIdCard(idCardBox.value)" [nzAutocomplete]="autoIdCardList" [(ngModel)]="idCardSelected">
+      <nz-autocomplete nzBackfill #autoIdCardList>
+        <nz-auto-option *ngFor="let each of userListSlice" [nzValue]="each.idCard">
+          <p><span>{{each.idCard}}</span></p>
+        </nz-auto-option>
+      </nz-autocomplete>
       <nz-form-explain *ngIf="validateForm.get('idCard').dirty && validateForm.get('idCard').errors">
         <ng-container *ngIf="validateForm.get('idCard').hasError('wrong')">
           请填写有效身份证编号!
@@ -50,7 +57,8 @@
   <nz-form-item>
     <nz-form-label [nzSpan]="7" nzRequired>客房号</nz-form-label>
     <nz-form-control [nzSpan]="12" nzHasFeedback>
-      <app-room-no-search formControlName="roomNo" (ngModelChange)="onRoomNoChange()" [showUnused] = false></app-room-no-search>
+      <app-room-no-search formControlName="roomNo" (ngModelChange)="onRoomNoChange()"
+                          [showUnused]=false></app-room-no-search>
       <nz-form-explain *ngIf="validateForm.get('roomNo').dirty && validateForm.get('roomNo').errors">
         <ng-container *ngIf="validateForm.get('roomNo').hasError('required')">
           请填写客房号!
@@ -61,7 +69,7 @@
 
   <nz-form-item>
     <nz-form-label [nzSm]="7" [nzXs]="24" nzRequired>日期</nz-form-label>
-    <nz-form-control [nzSm]="12" [nzXs]="20" >
+    <nz-form-control [nzSm]="12" [nzXs]="20">
       <ng-container *ngIf="room.type === '小时房'">
         <nz-range-picker nzShowTime
                          formControlName="rangeDate"
@@ -73,19 +81,19 @@
       </ng-container>
 
       <ng-container *ngIf="this.room.type !== '小时房'">
-      <nz-range-picker
-        formControlName="rangeDate"
-        [nzPlaceHolder]="['入住日期','退房日期']"
-        [nzDisabledDate]="disabledDate"
-        [ngModel]="room.status === 1 ? [room.checkInDate,room.checkOutDate] : null"
-        [nzDisabled]="room.status === 1"></nz-range-picker>
+        <nz-range-picker
+          formControlName="rangeDate"
+          [nzPlaceHolder]="['入住日期','退房日期']"
+          [nzDisabledDate]="disabledDate"
+          [ngModel]="room.status === 1 ? [room.checkInDate,room.checkOutDate] : null"
+          [nzDisabled]="room.status === 1"></nz-range-picker>
       </ng-container>
     </nz-form-control>
   </nz-form-item>
 
   <nz-form-item>
     <nz-form-label [nzSpan]="7">备注</nz-form-label>
-    <nz-form-control [nzSpan]="12" >
+    <nz-form-control [nzSpan]="12">
       <textarea formControlName="comment" nz-input rows="2" placeholder="备注"></textarea>
     </nz-form-control>
   </nz-form-item>

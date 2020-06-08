@@ -48,6 +48,33 @@ export class AuthenticationService {
     );
   }
 
+  register(userDto: User): Observable<boolean> {
+    return this.http.post<any>(`${environment.apiUrl}/auth/register`, userDto, httpOptions).pipe(
+      tap(response => {
+        if (response.success) {
+          // login successful, store username and jwt token in local storage to keep user logged in between page refreshes
+          const tokenParsed = this.decodeToken(response.data.token);
+          const user: User = response.data.user;
+          console.log(user);
+          localStorage.setItem('currentUserInfo', JSON.stringify(user));
+          localStorage.setItem('currentUser', JSON.stringify({
+            userId: user.id,
+            token: response.data.token,
+            expire: JSON.parse(tokenParsed).exp,
+            tokenParsed: tokenParsed
+          }));
+          return of(true);
+        } else {
+          return of(false);
+        }
+      }),
+      catchError((err) => {
+        console.error(err);
+        return of(false);
+      })
+    );
+  }
+
   getCurrentUser(): any {
     const userStr = localStorage.getItem('currentUser');
     const nowTime = new Date().getTime().toString().substr(0, 10);

@@ -220,8 +220,26 @@ public class Converters {
         .password(user.getPassword())
         .phone(user.getPhone())
         .email(user.getEmail())
+        .idCard(user.getIdCard())
         .authority(user.getAuthority())
         .authorities(user.getAuthorities())
         .build();
+  }
+
+  public static User userDto2User(UserDto userDto) {
+    log.info(userDto);
+    if (userDto == null) {
+      return null;
+    }
+    User user=new User();
+    user.setId(userDto.getId());
+    user.setName(userDto.getName());
+    user.setPassword(userDto.getPassword());
+    user.setPhone(userDto.getPhone());
+    user.setEmail(userDto.getEmail());
+    user.setIdCard(userDto.getIdCard());
+    user.setAuthority(userDto.getAuthority());
+
+    return user;
   }
 }

@@ -23,6 +23,16 @@ public interface UserService {
   User getById(Integer id);
 
   /**
+   * 保存用户
+   *
+   * @param user 用户
+   * @return 执行结果
+   * @author suwen
+   * @date 2020/6/5 上午8:06
+   */
+  User saveUser(User user);
+
+  /**
    * 根据用户id和密码查找用户
    *
    * @param id 用户id

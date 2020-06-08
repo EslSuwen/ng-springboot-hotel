@@ -57,7 +57,7 @@
                       </mdb-error>
                     </div>
                     <div class="text-center">
-                      <button mdbBtn type="submit" gradient="blue" mdbWavesEffect
+                      <button mdbBtn gradient="blue" mdbWavesEffect
                               class="waves-light"
                               (click)="register.show()">注册
                       </button>
@@ -100,7 +100,7 @@
         <div class="md-form">
           <input type="text" id="form6" class="form-control"
                  mdbInput mdbValidate formControlName="registerUserFormEx" minLength="8" maxLength="25"
-                 [(ngModel)]="registerModel.username">
+                 [(ngModel)]="registerModel.name">
           <label for="form6">
             <mdb-icon fas icon="user" class="active mr-1"></mdb-icon>
             姓名
@@ -112,7 +112,7 @@
         <div class="md-form">
           <input type="text" id="form7" class="form-control"
                  mdbInput mdbValidate formControlName="registerUserFormEx" minLength="8" maxLength="25"
-                 [(ngModel)]="registerModel.userNo">
+                 [(ngModel)]="registerModel.idCard">
           <label for="form7">
             <mdb-icon fas icon="user" class="active mr-1"></mdb-icon>
             身份证号
@@ -136,7 +136,7 @@
         <div class="md-form">
           <input type="text" id="form9" class="form-control"
                  mdbInput mdbValidate formControlName="registerUserFormEx" minLength="8" maxLength="25"
-                 [(ngModel)]="registerModel.userphone">
+                 [(ngModel)]="registerModel.phone">
           <label for="form9">
             <mdb-icon fas icon="user" class="active mr-1"></mdb-icon>
             电话
@@ -192,7 +192,7 @@
       </div>
       <!--Body-->
       <div class="modal-body mb-1">
-        <h5 class="mt-1 mb-2 text-center">账号：{{registerModel.username}} 注册成功！</h5>
+        <h5 class="mt-1 mb-2 text-center">账号：{{registerModel.name}} 注册成功！</h5>
 
         <div class="text-center mt-4">
           <button mdbBtn color="cyan" rounded="true" class="mt-1 waves-light" mdbWavesEffect
