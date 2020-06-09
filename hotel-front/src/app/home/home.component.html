@@ -10,20 +10,20 @@
           <mdb-icon fas icon="chalkboard-teacher" class="mr-1 amber-text" size="lg"></mdb-icon>
           登记
         </a>
-        <a *appHasRole="'USER'" class="nav-link my-2 text-center " mdbWavesEffect routerLink="login"
+        <a *appHasRole="'USER'" class="nav-link my-2 text-center " mdbWavesEffect routerLink="book"
            routerLinkActive="active">
           <mdb-icon fas icon="chalkboard-teacher" class="mr-1 amber-text" size="lg"></mdb-icon>
           预定
         </a>
-        <a *appHasRole="'USER'" class="nav-link my-2 text-center " mdbWavesEffect routerLink="login"
+        <a *appHasRole="'USER'" class="nav-link my-2 text-center " mdbWavesEffect routerLink="myBook"
            routerLinkActive="active">
           <mdb-icon fas icon="chalkboard-teacher" class="mr-1 amber-text" size="lg"></mdb-icon>
           我的订单
         </a>
-        <a *appHasRole="'USER'" class="nav-link my-2 text-center " mdbWavesEffect routerLink="login"
+        <a class="nav-link my-2 text-center " mdbWavesEffect routerLink="onsale"
            routerLinkActive="active">
           <mdb-icon fas icon="chalkboard-teacher" class="mr-1 amber-text" size="lg"></mdb-icon>
-          我的订单
+          今日特价
         </a>
         <a *appHasRole="'ADMIN'" mdbWavesEffect class="nav-link text-center my-2" routerLink="logout"
            routerLinkActive="active">
@@ -75,7 +75,7 @@
                  routerLinkActive="active"><span>个人信息</span></a>
               <a mdbWavesEffect routerLink="/home/updatepassword"
                  routerLinkActive="active"><span>修改密码</span></a>
-              <a mdbWavesEffect href='http://www.cqjtu.edu.cn/'><span>回到主页</span></a>
+              <a mdbWavesEffect routerLink="index"><span>回到主页</span></a>
               <a mdbWavesEffect href="" (click)="logout()"><span>退出登录</span></a>
             </div>
             <div class="my-auto">
@@ -100,7 +100,7 @@
                       routerLinkActive="active">修改密码
                   </li>
                   <li nz-menu-divider></li>
-                  <li nz-menu-item (click)="logout()">退出登录</li>
+                  <li nz-menu-item routerLink="/">退出登录</li>
                 </ul>
               </nz-dropdown-menu>
             </div>

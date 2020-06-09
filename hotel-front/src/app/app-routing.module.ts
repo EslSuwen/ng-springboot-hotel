@@ -10,6 +10,8 @@ import {MemberComponent} from './home/member/member.component';
 import {CanActivateAuthGuard} from './auth/can-activate.authguard';
 import {UserInfoComponent} from './home/user-info/user-info.component';
 import {UpdatePasswordComponent} from './home/update-password/update-password.component';
+import {OnsaleComponent} from './home/onsale/onsale.component';
+import {IndexComponent} from './home/index/index.component';
 
 const routes: Routes = [
   {path: '', redirectTo: '/signin', pathMatch: 'full'},
@@ -20,7 +22,7 @@ const routes: Routes = [
     children: [
       {
         path: '',
-        redirectTo: '/home/roomManagement',
+        redirectTo: '/home/index',
         pathMatch: 'full'
       },
       {path: 'login', component: LoginComponent},
@@ -30,6 +32,9 @@ const routes: Routes = [
       {path: 'memberManagement', component: MemberComponent},
       {path: 'updatepassword', component: UpdatePasswordComponent},
       {path: 'personalinfo', component: UserInfoComponent},
+      {path: 'onsale', component: OnsaleComponent},
+      {path: 'index', component: IndexComponent},
+
 
     ],
   },

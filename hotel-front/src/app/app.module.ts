@@ -25,6 +25,8 @@ import {MemberComponent} from './home/member/member.component';
 import {UpdatePasswordComponent} from './home/update-password/update-password.component';
 import {UserInfoComponent} from './home/user-info/user-info.component';
 import {HasRoleDirective} from './auth/has-role.directive';
+import { OnsaleComponent } from './home/onsale/onsale.component';
+import { IndexComponent } from './home/index/index.component';
 
 registerLocaleData(zh);
 
@@ -47,6 +49,8 @@ registerLocaleData(zh);
     UpdatePasswordComponent,
     UserInfoComponent,
     HasRoleDirective,
+    OnsaleComponent,
+    IndexComponent,
   ],
   imports: [
     BrowserModule,
