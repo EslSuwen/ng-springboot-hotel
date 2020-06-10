@@ -27,6 +27,7 @@ import {UserInfoComponent} from './home/user-info/user-info.component';
 import {HasRoleDirective} from './auth/has-role.directive';
 import { OnsaleComponent } from './home/onsale/onsale.component';
 import { IndexComponent } from './home/index/index.component';
+import { BookComponent } from './home/book/book.component';
 
 registerLocaleData(zh);
 
@@ -51,6 +52,7 @@ registerLocaleData(zh);
     HasRoleDirective,
     OnsaleComponent,
     IndexComponent,
+    BookComponent,
   ],
   imports: [
     BrowserModule,

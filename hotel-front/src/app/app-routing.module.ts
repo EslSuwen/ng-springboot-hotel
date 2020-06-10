@@ -12,6 +12,7 @@ import {UserInfoComponent} from './home/user-info/user-info.component';
 import {UpdatePasswordComponent} from './home/update-password/update-password.component';
 import {OnsaleComponent} from './home/onsale/onsale.component';
 import {IndexComponent} from './home/index/index.component';
+import {BookComponent} from './home/book/book.component';
 
 const routes: Routes = [
   {path: '', redirectTo: '/signin', pathMatch: 'full'},
@@ -34,6 +35,7 @@ const routes: Routes = [
       {path: 'personalinfo', component: UserInfoComponent},
       {path: 'onsale', component: OnsaleComponent},
       {path: 'index', component: IndexComponent},
+      {path: 'book', component: BookComponent},
 
 
     ],

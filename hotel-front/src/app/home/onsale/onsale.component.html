@@ -29,7 +29,7 @@
           aperiam.
         </mdb-card-text>
 
-        <a mdbBtn color="unique" class="waves-light" (click)="setRoomNo(21);bookModal.show()" mdbWavesEffect>立即预定！</a>
+        <a mdbBtn color="unique" class="waves-light" (click)="setRoomNo('豪华城景大床房');bookModal.show()" mdbWavesEffect>立即预定！</a>
 
       </mdb-card-body>
       <!--/.Card content-->
@@ -66,7 +66,7 @@
           aperiam.
         </mdb-card-text>
 
-        <a mdbBtn color="unique" class="waves-light" (click)="setRoomNo(22);bookModal.show()" mdbWavesEffect>立即预定！</a>
+        <a mdbBtn color="unique" class="waves-light" (click)="setRoomNo('豪华山景大床房');bookModal.show()" mdbWavesEffect>立即预定！</a>
 
       </mdb-card-body>
       <!--/.Card content-->
@@ -224,12 +224,12 @@
 
           <div class="">
             <label for="formCheckInDate">入住时间</label><br>
-            <input type="datetime" id="formCheckInDate" [(ngModel)]="bookModel.checkInDate">
+            <input type="date" id="formCheckInDate" [(ngModel)]="bookModel.checkInDate">
           </div>
 
           <div class="">
             <label for="formCheckOutDate">退房时间</label><br>
-            <input type="datetime" id="formCheckOutDate"
+            <input type="date" id="formCheckOutDate"
                    [(ngModel)]="bookModel.checkOutDate">
           </div>
 

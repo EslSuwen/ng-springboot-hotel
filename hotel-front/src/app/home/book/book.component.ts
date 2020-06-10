@@ -1,20 +1,19 @@
 import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormControl, FormGroup, ValidationErrors, Validators} from '@angular/forms';
+import {Room} from '../../dto/Room';
 import {Observable, Observer, Subject} from 'rxjs';
 import {Customer} from '../../dto/Customer';
 import {Utils} from '../../util/Utils';
-import {Room} from '../../dto/Room';
 import {RoomService} from '../../service/room.service';
-import {debounceTime, distinctUntilChanged, switchMap} from 'rxjs/operators';
 import {CustomerService} from '../../service/customer.service';
+import {debounceTime, distinctUntilChanged, switchMap} from 'rxjs/operators';
 
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss']
+  selector: 'app-book',
+  templateUrl: './book.component.html',
+  styleUrls: ['./book.component.scss']
 })
-
-export class LoginComponent implements OnInit {
+export class BookComponent implements OnInit {
 
   idCardSelected: string;
   userList = [];
@@ -145,3 +144,4 @@ export class LoginComponent implements OnInit {
   }
 
 }
+
