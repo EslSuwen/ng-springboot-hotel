@@ -11,7 +11,7 @@ export class HomeComponent implements OnInit {
   userName = '';
 
   onToggle() {
-    this.toggleFlag = (this.toggleFlag === true) ? false : true;
+    this.toggleFlag = (this.toggleFlag !== true);
   }
 
   constructor(private authenticationService: AuthenticationService) {

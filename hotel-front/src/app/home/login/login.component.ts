@@ -62,7 +62,7 @@ export class LoginComponent implements OnInit {
   disabledDate = (current: Date): boolean => {
     const date = new Date();
     return current < Utils.getDate(date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + date.getDate() + ' 00:00:00');
-  };
+  }
 
   resetForm(e: MouseEvent): void {
     e.preventDefault();

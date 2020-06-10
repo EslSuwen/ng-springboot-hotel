@@ -6,7 +6,7 @@
       <!--Card image-->
       <div class="view view-cascade overlay waves-light" mdbWavesEffect>
         <mdb-card-img
-          src="https://t8.baidu.com/it/u=601543345,3047749420&fm=193"></mdb-card-img>
+          src="http://static-xiaoguotu.17house.com/xgt/s/21/14632332161520729.jpg"></mdb-card-img>
         <a>
           <div class="mask rgba-white-slight"></div>
         </a>
@@ -15,6 +15,7 @@
 
       <mdb-card-body cascade="true" class="text-center">
         <!--Card content-->
+        <h2 class="text-danger">$99</h2>
         <h5 class="pink-text">
           <mdb-icon fas icon="utensils"></mdb-icon>
           配早晚餐
@@ -28,7 +29,7 @@
           aperiam.
         </mdb-card-text>
 
-        <a mdbBtn color="unique" class="waves-light" mdbWavesEffect>立即预定！</a>
+        <a mdbBtn color="unique" class="waves-light" (click)="setRoomNo(21);bookModal.show()" mdbWavesEffect>立即预定！</a>
 
       </mdb-card-body>
       <!--/.Card content-->
@@ -36,7 +37,6 @@
     </mdb-card>
     <!--/.Card-->
   </div>
-
   <div class="col-md-4">
     <!--Card-->
     <mdb-card cascade="true" narrower="true">
@@ -52,6 +52,7 @@
 
       <mdb-card-body cascade="true" class="text-center">
         <!--Card content-->
+        <h2 class="text-danger">$89</h2>
         <h5 class="pink-text">
           <mdb-icon fas icon="utensils"></mdb-icon>
           配早晚餐
@@ -65,7 +66,7 @@
           aperiam.
         </mdb-card-text>
 
-        <a mdbBtn color="unique" class="waves-light" mdbWavesEffect>立即预定！</a>
+        <a mdbBtn color="unique" class="waves-light" (click)="setRoomNo(22);bookModal.show()" mdbWavesEffect>立即预定！</a>
 
       </mdb-card-body>
       <!--/.Card content-->
@@ -73,7 +74,6 @@
     </mdb-card>
     <!--/.Card-->
   </div>
-
   <div class="col-md-4">
     <!--Card-->
     <mdb-card cascade="true" narrower="true">
@@ -90,6 +90,7 @@
 
       <mdb-card-body cascade="true" class="text-center">
         <!--Card content-->
+        <h2 class="text-danger">$79</h2>
         <h5 class="pink-text">
           <mdb-icon fas icon="utensils"></mdb-icon>
           配早晚餐
@@ -103,7 +104,7 @@
           aperiam.
         </mdb-card-text>
 
-        <a mdbBtn color="unique" class="waves-light" mdbWavesEffect>立即预定！</a>
+        <a mdbBtn color="unique" class="waves-light" (click)="setRoomNo(23);bookModal.show()" mdbWavesEffect>立即预定！</a>
 
       </mdb-card-body>
       <!--/.Card content-->
@@ -111,7 +112,6 @@
     </mdb-card>
     <!--/.Card-->
   </div>
-
 </div>
 <div class="row mt-5 animated fadeInDown">
   <div class="col-md-4">
@@ -124,6 +124,7 @@
 
         <!--Title-->
         <mdb-card-title>
+          <h2 class="text-danger">$69</h2>
           <h4>雅致大床房</h4>
         </mdb-card-title>
 
@@ -131,7 +132,7 @@
         <mdb-card-text> 拖鞋、浴室化妆放大镜、24小时热水、浴衣、独立淋浴间、吹风机、洗浴间电话。
         </mdb-card-text>
 
-        <a href="#" mdbBtn color="primary" mdbWavesEffect>立即预定！</a>
+        <a mdbBtn color="primary" (click)="setRoomNo(24);bookModal.show()" mdbWavesEffect>立即预定！</a>
       </mdb-card-body>
     </mdb-card>
   </div>
@@ -145,6 +146,7 @@
 
         <!--Title-->
         <mdb-card-title>
+          <h2 class="text-danger">$69</h2>
           <h4>摩天景观房</h4>
         </mdb-card-title>
 
@@ -152,7 +154,7 @@
         <mdb-card-text> 遮光窗帘、手动窗帘、备用床具、床具:鸭绒被、房间内高速上网、
         </mdb-card-text>
 
-        <a href="#" mdbBtn color="primary" mdbWavesEffect>立即预定！</a>
+        <a mdbBtn color="primary" (click)="setRoomNo(25);bookModal.show()" mdbWavesEffect>立即预定！</a>
       </mdb-card-body>
     </mdb-card>
   </div>
@@ -166,6 +168,7 @@
 
         <!--Title-->
         <mdb-card-title>
+          <h2 class="text-danger">$69</h2>
           <h4>豪华亲子房</h4>
         </mdb-card-title>
 
@@ -173,8 +176,82 @@
         <mdb-card-text> 多种规格电源插座、空调、闹钟、针线包、220V电压插座、遮光窗帘、手动窗帘、备用床具、床具:鸭绒被、房间内高速上网、客房WIFI免费。
         </mdb-card-text>
 
-        <a href="#" mdbBtn color="primary" mdbWavesEffect>立即预定！</a>
+        <a mdbBtn color="primary" (click)="setRoomNo(26);bookModal.show()" mdbWavesEffect>立即预定！</a>
       </mdb-card-body>
     </mdb-card>
+  </div>
+</div>
+<div mdbModal #bookModal="mdbModal" class="modal mt-5 fade right"
+     id="frameModalTop" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-notify modal-info" role="document">
+    <!--Content-->
+    <div class="modal-content ">
+      <!--Body-->
+      <mdb-card cascade="true" narrower="true">
+        <!--Card image-->
+        <div
+          class="view view-cascade gradient-card-header ripe-malinka-gradient narrower z-depth-2 rounded-lg  py-2 m-3 mt-n4 text-center">
+          <div class="m-3">
+            <h4 class="white-text">预定</h4>
+          </div>
+        </div>
+        <!--/Card image-->
+        <mdb-card-body>
+          <!--Body-->
+
+          <div class="md-form">
+            <input type="text" id="formIdCard" class="form-control" [(ngModel)]="bookModel.idCard"
+                   mdbInput>
+            <label for="formIdCard">身份证号</label>
+          </div>
+
+          <div class="md-form">
+            <input type="text" id="formName" class="form-control" [(ngModel)]="bookModel.name" mdbInput>
+            <label for="formName">姓名</label>
+          </div>
+
+          <div class="md-form">
+            <input type="text" id="formPhone" class="form-control" [(ngModel)]="bookModel.phone"
+                   mdbInput>
+            <label for="formPhone">用户电话</label>
+          </div>
+
+          <div class="md-form">
+            <input type="text" id="formRoomNo" class="form-control" [(ngModel)]="bookModel.roomNo"
+                   mdbInput>
+            <label for="formRoomNo">客房号</label>
+          </div>
+
+          <div class="">
+            <label for="formCheckInDate">入住时间</label><br>
+            <input type="datetime" id="formCheckInDate" [(ngModel)]="bookModel.checkInDate">
+          </div>
+
+          <div class="">
+            <label for="formCheckOutDate">退房时间</label><br>
+            <input type="datetime" id="formCheckOutDate"
+                   [(ngModel)]="bookModel.checkOutDate">
+          </div>
+
+          <div class="md-form">
+            <input type="text" id="formComment" class="form-control"
+                   [(ngModel)]="bookModel.comment">
+            <label for="formComment">备注</label>
+          </div>
+
+
+          <div class="text-center">
+            <button mdbBtn class="btn blue-gradient" mdbWavesEffect (click)="book();bookModal.hide()">保存
+            </button>
+            <button mdbBtn class="btn peach-gradient" mdbWavesEffect (click)="bookModal.hide()">关闭
+            </button>
+          </div>
+
+        </mdb-card-body>
+
+      </mdb-card>
+      <!--Form with header-->
+    </div>
+    <!--/.Content-->
   </div>
 </div>

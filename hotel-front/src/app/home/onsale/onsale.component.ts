@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {AuthenticationService} from '../../service/authentication.service';
 
 @Component({
   selector: 'app-onsale',
@@ -7,9 +8,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class OnsaleComponent implements OnInit {
 
-  constructor() { }
+  bookModel: any = {};
+
+  constructor(private authenticationService: AuthenticationService) {
+  }
 
   ngOnInit(): void {
+    this.bookModel = this.authenticationService.getCurrentUserInfo();
+  }
+
+
+  setRoomNo(roomNo: number) {
+    this.bookModel.roomNo = roomNo;
+  }
+
+  book() {
+    console.log(this.bookModel);
   }
 
 }
