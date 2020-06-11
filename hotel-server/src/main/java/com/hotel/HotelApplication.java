@@ -12,7 +12,6 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
  */
 @EnableSwagger2
 @SpringBootApplication
-@EnableAutoConfiguration(exclude = {SecurityAutoConfiguration.class})
 public class HotelApplication {
   public static void main(String[] args) {
     SpringApplication.run(HotelApplication.class, args);

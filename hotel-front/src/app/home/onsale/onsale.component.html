@@ -200,42 +200,42 @@
           <!--Body-->
 
           <div class="md-form">
-            <input type="text" id="formIdCard" class="form-control" [(ngModel)]="bookModel.idCard"
+            <input type="text" id="formIdCard" class="form-control" [(ngModel)]="bookRoom.idCard"
                    mdbInput>
             <label for="formIdCard">身份证号</label>
           </div>
 
           <div class="md-form">
-            <input type="text" id="formName" class="form-control" [(ngModel)]="bookModel.name" mdbInput>
+            <input type="text" id="formName" class="form-control" [(ngModel)]="bookRoom.name" mdbInput>
             <label for="formName">姓名</label>
           </div>
 
           <div class="md-form">
-            <input type="text" id="formPhone" class="form-control" [(ngModel)]="bookModel.phone"
+            <input type="text" id="formPhone" class="form-control" [(ngModel)]="bookRoom.phoneNo"
                    mdbInput>
             <label for="formPhone">用户电话</label>
           </div>
 
           <div class="md-form">
-            <input type="text" id="formRoomNo" class="form-control" [(ngModel)]="bookModel.roomNo"
+            <input type="text" id="formRoomNo" class="form-control" [(ngModel)]="bookRoom.roomNo" disabled
                    mdbInput>
             <label for="formRoomNo">客房号</label>
           </div>
 
           <div class="">
             <label for="formCheckInDate">入住时间</label><br>
-            <input type="date" id="formCheckInDate" [(ngModel)]="bookModel.checkInDate">
+            <input type="date" id="formCheckInDate" [(ngModel)]="bookRoom.checkInDate">
           </div>
 
           <div class="">
             <label for="formCheckOutDate">退房时间</label><br>
             <input type="date" id="formCheckOutDate"
-                   [(ngModel)]="bookModel.checkOutDate">
+                   [(ngModel)]="bookRoom.checkOutDate">
           </div>
 
           <div class="md-form">
             <input type="text" id="formComment" class="form-control"
-                   [(ngModel)]="bookModel.comment">
+                   [(ngModel)]="bookRoom.comment">
             <label for="formComment">备注</label>
           </div>
 

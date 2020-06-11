@@ -45,7 +45,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
   private String[] actuatorExposures;
 
   /** 放行白名单 */
-  private static String[] WHITE_LIST = {
+  private static final String[] WHITE_LIST = {
     "/**",
     "/**/*.css,",
     "/**/*.jpg,",

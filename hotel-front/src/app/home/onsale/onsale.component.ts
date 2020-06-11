@@ -3,6 +3,8 @@ import {AuthenticationService} from '../../service/authentication.service';
 import {Customer} from '../../dto/Customer';
 import {Room} from '../../dto/Room';
 import {RoomService} from '../../service/room.service';
+import {BookRoomService} from '../../service/book-room.service';
+import {BookRoom} from '../../dto/BookRoom';
 
 @Component({
   selector: 'app-onsale',
@@ -12,20 +14,32 @@ import {RoomService} from '../../service/room.service';
 export class OnsaleComponent implements OnInit {
 
   bookModel: any = {};
+  bookRoom = new BookRoom;
 
-  constructor(private authenticationService: AuthenticationService, private roomService: RoomService) {
+  constructor(private authenticationService: AuthenticationService,
+              private bookRoomService: BookRoomService,
+              private roomService: RoomService) {
   }
 
   ngOnInit(): void {
-    this.bookModel = this.authenticationService.getCurrentUserInfo();
+    const user = this.authenticationService.getCurrentUserInfo();
+    this.bookRoom.phoneNo = user.phone;
+    this.bookRoom.name = user.name;
+    this.bookRoom.idCard = user.idCard;
+    this.bookRoom.status = 'AUDITING';
   }
 
 
   setRoomNo(roomNo: string) {
-    this.bookModel.roomNo = roomNo;
+    this.bookRoom.roomNo = roomNo;
   }
 
   book() {
+    console.log(this.bookRoom);
+    this.bookRoomService.addBookRoom(this.bookRoom).subscribe();
+  }
+
+  book1() {
     const customer = new Customer();
     customer.comment = this.bookModel.comment;
     customer.idCard = this.bookModel.idCard;
@@ -43,11 +57,11 @@ export class OnsaleComponent implements OnInit {
     console.log(this.bookModel);
     console.log(room);
 
-    this.roomService.login(room).subscribe((result) => {
-      if (result !== undefined && result.success) {
-        alert('预定成功！');
-      }
-    });
+    /* this.roomService.login(room).subscribe((result) => {
+       if (result !== undefined && result.success) {
+         alert('预定成功！');
+       }
+     });*/
   }
 
 }

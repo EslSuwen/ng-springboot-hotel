@@ -7,6 +7,9 @@ import {Utils} from '../../util/Utils';
 import {RoomService} from '../../service/room.service';
 import {CustomerService} from '../../service/customer.service';
 import {debounceTime, distinctUntilChanged, switchMap} from 'rxjs/operators';
+import {AuthenticationService} from '../../service/authentication.service';
+import {BookRoomService} from '../../service/book-room.service';
+import {BookRoom} from '../../dto/BookRoom';
 
 @Component({
   selector: 'app-book',
@@ -14,6 +17,8 @@ import {debounceTime, distinctUntilChanged, switchMap} from 'rxjs/operators';
   styleUrls: ['./book.component.scss']
 })
 export class BookComponent implements OnInit {
+
+  currentUser = this.authenticationService.getCurrentUserInfo();
 
   idCardSelected: string;
   userList = [];
@@ -49,11 +54,23 @@ export class BookComponent implements OnInit {
     room.customers.push(customer);
 
     console.log(room);
-    this.roomService.login(room).subscribe((result) => {
+    const user = this.authenticationService.getCurrentUserInfo();
+    const bookRoom = new BookRoom();
+    bookRoom.name = user.name;
+    bookRoom.checkInDate = room.checkInDate;
+    bookRoom.checkOutDate = room.checkOutDate;
+    bookRoom.roomNo = room.roomNo;
+    bookRoom.idCard = user.idCard;
+    bookRoom.phoneNo = user.phone;
+    bookRoom.comment = customer.comment;
+    bookRoom.status = 'AUDITING';
+    console.log(bookRoom);
+    this.bookRoomService.addBookRoom(bookRoom).subscribe();
+    /*this.roomService.login(room).subscribe((result) => {
       if (result !== undefined && result.success) {
         this.resetForm($event);
       }
-    });
+    });*/
 
   }
 
@@ -103,7 +120,10 @@ export class BookComponent implements OnInit {
     this.searchTerms.next(this.room.roomNo);
   }
 
-  constructor(private fb: FormBuilder, private roomService: RoomService, private customerService: CustomerService) {
+  constructor(private fb: FormBuilder, private roomService: RoomService,
+              private customerService: CustomerService,
+              private authenticationService: AuthenticationService,
+              private bookRoomService: BookRoomService) {
     this.validateForm = this.fb.group({
       name: ['', [Validators.required]],
       idCard: ['', [Validators.required], [this.idCardAsyncValidator]],
@@ -115,6 +135,7 @@ export class BookComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.validateForm.patchValue({idCard: this.currentUser.idCard, name: this.currentUser.name, phoneNo: this.currentUser.phone});
     this.rooms$ = this.searchTerms.pipe(
       // wait 300ms after each keystroke before considering the term
       debounceTime(300),

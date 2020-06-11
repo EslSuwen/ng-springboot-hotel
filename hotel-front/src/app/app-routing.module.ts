@@ -6,13 +6,14 @@ import {RoomManagementComponent} from './home/room-management/room-management.co
 import {CustomerManagementComponent} from './home/customer-management/customer-management.component';
 import {SigninComponent} from './signin/signin.component';
 import {HomeComponent} from './home/home.component';
-import {MemberComponent} from './home/member/member.component';
 import {CanActivateAuthGuard} from './auth/can-activate.authguard';
 import {UserInfoComponent} from './home/user-info/user-info.component';
 import {UpdatePasswordComponent} from './home/update-password/update-password.component';
 import {OnsaleComponent} from './home/onsale/onsale.component';
 import {IndexComponent} from './home/index/index.component';
 import {BookComponent} from './home/book/book.component';
+import {AuditComponent} from './home/audit/audit.component';
+import {MyBookComponent} from './home/my-book/my-book.component';
 
 const routes: Routes = [
   {path: '', redirectTo: '/signin', pathMatch: 'full'},
@@ -30,12 +31,14 @@ const routes: Routes = [
       {path: 'logout', component: LogoutComponent},
       {path: 'roomManagement', component: RoomManagementComponent},
       {path: 'customerManagement', component: CustomerManagementComponent},
-      {path: 'memberManagement', component: MemberComponent},
+      {path: 'my-book', component: MyBookComponent},
       {path: 'updatepassword', component: UpdatePasswordComponent},
       {path: 'personalinfo', component: UserInfoComponent},
       {path: 'onsale', component: OnsaleComponent},
       {path: 'index', component: IndexComponent},
       {path: 'book', component: BookComponent},
+      {path: 'audit', component: AuditComponent},
+
 
 
     ],

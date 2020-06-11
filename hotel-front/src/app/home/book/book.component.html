@@ -3,29 +3,14 @@
   <nz-form-item>
     <nz-form-label [nzSpan]="7" nzRequired>身份证号</nz-form-label>
     <nz-form-control [nzSpan]="12" nzHasFeedback>
-      <input nz-input formControlName="idCard" placeholder="客人身份证编号" maxlength="18" #idCardBox
-             (ngModelChange)="searchIdCard(idCardBox.value)" [nzAutocomplete]="autoIdCardList"
-             [(ngModel)]="idCardSelected">
-      <nz-autocomplete nzBackfill #autoIdCardList>
-        <nz-auto-option *ngFor="let each of userListSlice" [nzValue]="each.idCard">
-          <p><span>{{each.idCard}}</span></p>
-        </nz-auto-option>
-      </nz-autocomplete>
-      <nz-form-explain *ngIf="validateForm.get('idCard').dirty && validateForm.get('idCard').errors">
-        <ng-container *ngIf="validateForm.get('idCard').hasError('wrong')">
-          请填写有效身份证编号!
-        </ng-container>
-        <ng-container *ngIf="validateForm.get('idCard').hasError('required')">
-          请填写客人身份证号!
-        </ng-container>
-      </nz-form-explain>
+      <input nz-input formControlName="idCard" placeholder="客人身份证编号" maxlength="18" disabled>
     </nz-form-control>
   </nz-form-item>
 
   <nz-form-item>
     <nz-form-label [nzSpan]="7" nzRequired>姓名</nz-form-label>
     <nz-form-control [nzSpan]="12" nzHasFeedback>
-      <input nz-input formControlName="name" placeholder="客人姓名">
+      <input nz-input formControlName="name" placeholder="客人姓名" disabled>
       <nz-form-explain
         *ngIf="validateForm.get('name').dirty && validateForm.get('name').errors || validateForm.get('name').pending ">
         <ng-container *ngIf="validateForm.get('name').hasError('required')">
@@ -44,7 +29,7 @@
   <nz-form-item>
     <nz-form-label [nzSpan]="7" nzRequired>手机号</nz-form-label>
     <nz-form-control [nzSpan]="12" nzHasFeedback>
-      <input nz-input formControlName="phoneNo" placeholder="手机号码" maxlength="11">
+      <input nz-input formControlName="phoneNo" placeholder="手机号码" maxlength="11" disabled>
       <nz-form-explain *ngIf="validateForm.get('phoneNo').dirty && validateForm.get('phoneNo').errors">
         <ng-container *ngIf="validateForm.get('phoneNo').hasError('wrong')">
           请填写正确的手机号码!

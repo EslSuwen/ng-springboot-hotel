@@ -21,13 +21,14 @@ import {SigninComponent} from './signin/signin.component';
 import {ModalComponent} from './modal/modal.component';
 import {HomeComponent} from './home/home.component';
 import {SideCardComponent} from './home/side-card/side-card.component';
-import {MemberComponent} from './home/member/member.component';
 import {UpdatePasswordComponent} from './home/update-password/update-password.component';
 import {UserInfoComponent} from './home/user-info/user-info.component';
 import {HasRoleDirective} from './auth/has-role.directive';
-import { OnsaleComponent } from './home/onsale/onsale.component';
-import { IndexComponent } from './home/index/index.component';
-import { BookComponent } from './home/book/book.component';
+import {OnsaleComponent} from './home/onsale/onsale.component';
+import {IndexComponent} from './home/index/index.component';
+import {BookComponent} from './home/book/book.component';
+import {AuditComponent} from './home/audit/audit.component';
+import {MyBookComponent} from './home/my-book/my-book.component';
 
 registerLocaleData(zh);
 
@@ -46,13 +47,14 @@ registerLocaleData(zh);
     ModalComponent,
     HomeComponent,
     SideCardComponent,
-    MemberComponent,
     UpdatePasswordComponent,
     UserInfoComponent,
     HasRoleDirective,
     OnsaleComponent,
     IndexComponent,
     BookComponent,
+    AuditComponent,
+    MyBookComponent,
   ],
   imports: [
     BrowserModule,

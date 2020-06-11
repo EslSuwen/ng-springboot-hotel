@@ -1,0 +1,50 @@
+<div class="col-lg-8 mt-5 mx-auto animated fadeInRight">
+  <mdb-card cascade="true" narrower="true">
+    <!--Card image-->
+    <div
+      class="view view-cascade gradient-card-header purple-gradient narrower z-depth-2 rounded-lg  py-2 m-3 mt-n4 text-center">
+      <div class="m-3">
+        <h4 class="white-text">预约情况一览</h4>
+      </div>
+    </div>
+    <!--/Card image-->
+    <table class="table table-striped table-responsive-md btn-table">
+      <thead>
+      <tr>
+        <th>序号</th>
+        <th>预约人姓名</th>
+        <th>身份证号</th>
+        <th>入住日期</th>
+        <th>退房日期</th>
+        <th>房间号</th>
+        <th>备注</th>
+        <th>状态</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let each of data;let i = index">
+        <td>{{i + 1}}</td>
+        <td>{{each.name}}</td>
+        <td>{{each.idCard}}</td>
+        <td>{{each.checkInDate}}</td>
+        <td>{{each.checkOutDate}}</td>
+        <td>{{each.roomNo}}</td>
+        <td>{{each.comment}}</td>
+        <td>
+          <label [ngSwitch]="each.status">
+            <button type="button" class="btn btn-outline-success disabled btn-sm" *ngSwitchCase="'PASS'">
+              已通过
+            </button>
+            <button type="button" class="btn btn-outline-warning disabled btn-sm" *ngSwitchCase="'AUDITING'">
+              审核中
+            </button>
+            <button type="button" class="btn btn-outline-danger disabled btn-sm" *ngSwitchDefault>已拒绝
+            </button>
+          </label>
+        </td>
+        <!--/.Content-->
+      </tr>
+      </tbody>
+    </table>
+  </mdb-card>
+</div>

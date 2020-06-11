@@ -231,7 +231,7 @@ public class Converters {
     if (userDto == null) {
       return null;
     }
-    User user=new User();
+    User user = new User();
     user.setId(userDto.getId());
     user.setName(userDto.getName());
     user.setPassword(userDto.getPassword());
@@ -241,5 +241,38 @@ public class Converters {
     user.setAuthority(userDto.getAuthority());
 
     return user;
+  }
+
+  public static BookRoomDto BookRoom2Dto(BookRoom bookRoom) {
+    return BookRoomDto.builder()
+        .id(bookRoom.getId())
+        .checkInDate(bookRoom.getCheckInDate())
+        .checkOutDate(bookRoom.getCheckOutDate())
+        .roomNo(bookRoom.getRoomNo())
+        .name(bookRoom.getName())
+        .idCard(bookRoom.getIdCard())
+        .phoneNo(bookRoom.getPhoneNo())
+        .comment(bookRoom.getComment())
+        .status(bookRoom.getStatus())
+        .build();
+  }
+
+  public static BookRoom Dto2BookRoom(BookRoomDto bookRoomDto) {
+
+    if (bookRoomDto == null) {
+      return null;
+    }
+    BookRoom bookRoom = new BookRoom();
+    bookRoom.setId(bookRoomDto.getId());
+    bookRoom.setCheckInDate(bookRoomDto.getCheckInDate());
+    bookRoom.setCheckOutDate(bookRoomDto.getCheckOutDate());
+    bookRoom.setRoomNo(bookRoomDto.getRoomNo());
+    bookRoom.setName(bookRoomDto.getName());
+    bookRoom.setIdCard(bookRoomDto.getIdCard());
+    bookRoom.setPhoneNo(bookRoomDto.getPhoneNo());
+    bookRoom.setComment(bookRoomDto.getComment());
+    bookRoom.setStatus(bookRoomDto.getStatus());
+
+    return bookRoom;
   }
 }
