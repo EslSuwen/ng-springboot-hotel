@@ -21,7 +21,7 @@ import java.util.Date;
  */
 @Component
 @Log4j2
-public class JwtTokenUtil {
+public final class JwtTokenUtil {
 
   private static final String CLAIM_AUTHORITIES = "authorities";
   private final SecurityProperties.Jwt jwtProperties;

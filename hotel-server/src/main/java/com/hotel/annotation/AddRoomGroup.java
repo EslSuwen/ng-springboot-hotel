@@ -1,7 +1,9 @@
 package com.hotel.annotation;
 
 /**
- * @author guangyong.yang
- * @date 2019-01-28
+ * AddRoomGroup
+ *
+ * @author suwen
+ * @date 2020/6/14 下午8:18
  */
 public interface AddRoomGroup {}

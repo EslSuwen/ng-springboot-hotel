@@ -4,9 +4,10 @@ import lombok.Builder;
 import lombok.Data;
 
 /**
- * @author guangyong.yang
- * @date 2019-01-21
- * @description
+ * ResultDto
+ *
+ * @author suwen
+ * @date 2020/6/14 下午8:20
  */
 @Data
 @Builder

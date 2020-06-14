@@ -18,8 +18,10 @@ import java.util.List;
 import java.util.Objects;
 
 /**
- * @author guangyong.yang
- * @date 2019-01-20
+ * RoomServiceImpl
+ *
+ * @author suwen
+ * @date 2020/6/14 下午8:22
  */
 @Service
 public class RoomServiceImpl implements RoomService {

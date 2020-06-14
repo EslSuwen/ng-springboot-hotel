@@ -15,8 +15,6 @@ import java.util.List;
 
 import static com.hotel.util.AuthorityUtil.createGrantedAuthorities;
 
-// import com.hotel.entity.User;
-
 /**
  * SpringBoot UserDetails 服务实现类
  *

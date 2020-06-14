@@ -1,9 +1,10 @@
 package com.hotel.constant;
 
 /**
- * @author guangyong.yang
- * @date 2019-01-18
- * @description 床型
+ * BedType
+ *
+ * @author suwen
+ * @date 2020/6/14 下午8:19
  */
 public enum BedType {
   /** 三人床 */

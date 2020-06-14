@@ -6,9 +6,10 @@ import lombok.Data;
 import javax.persistence.*;
 
 /**
- * @author guangyong.yang
- * @date 2019-01-16
- * @description 床
+ * Bed
+ *
+ * @author suwen
+ * @date 2020/6/14 下午8:21
  */
 @Data
 @Entity

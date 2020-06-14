@@ -7,9 +7,10 @@ import javax.validation.constraints.Pattern;
 import java.util.List;
 
 /**
- * @author guangyong.yang
- * @date 2019-01-23¡
- * @description
+ * RoomPageableDto
+ *
+ * @author suwen
+ * @date 2020/6/14 下午8:20
  */
 @Data
 public class RoomPageableDto {

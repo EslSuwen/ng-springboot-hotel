@@ -7,9 +7,10 @@ import javax.persistence.*;
 import java.util.List;
 
 /**
- * @author guangyong.yang
- * @date 2019-01-15
- * @description 客人
+ * Customer
+ *
+ * @author suwen
+ * @date 2020/6/14 下午8:21
  */
 @Getter
 @Setter

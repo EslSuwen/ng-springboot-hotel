@@ -17,8 +17,10 @@ import javax.validation.ConstraintViolationException;
 import java.util.List;
 
 /**
- * @author guangyong.yang
- * @date 2019-01-05
+ * RestExceptionHandler
+ *
+ * @author suwen
+ * @date 2020/6/14 下午8:21
  */
 @ControllerAdvice
 @Log4j2

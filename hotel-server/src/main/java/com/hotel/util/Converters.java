@@ -13,11 +13,13 @@ import java.util.Date;
 import java.util.List;
 
 /**
- * @author guangyong.yang
- * @date 2019-01-27 dto与entity之间转换
+ * Converters
+ *
+ * @author suwen
+ * @date 2020/6/14 下午8:24
  */
 @Log4j2
-public class Converters {
+public final class Converters {
 
   public static CustomerDto customer2Dto(Customer customer) {
     if (customer == null) {

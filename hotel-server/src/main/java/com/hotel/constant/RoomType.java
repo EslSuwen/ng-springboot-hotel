@@ -1,9 +1,10 @@
 package com.hotel.constant;
 
 /**
- * @author guangyong.yang
- * @date 2019-01-16
- * @description 房间类型
+ * RoomType
+ *
+ * @author suwen
+ * @date 2020/6/14 下午8:19
  */
 public enum RoomType {
   /** 小时房 */

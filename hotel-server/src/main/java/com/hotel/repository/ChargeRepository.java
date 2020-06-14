@@ -5,9 +5,10 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 /**
- * @author guangyong.yang
- * @date 2019-01-25
- * @description
+ * ChargeRepository
+ *
+ * @author suwen
+ * @date 2020/6/14 下午8:22
  */
 @Repository
 public interface ChargeRepository extends JpaRepository<Bed, Integer> {}

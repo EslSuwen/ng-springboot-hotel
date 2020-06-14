@@ -14,8 +14,10 @@ import java.util.Date;
 import java.util.List;
 
 /**
- * @author guangyong.yang
- * @date 2019-01-21
+ * RoomDto
+ *
+ * @author suwen
+ * @date 2020/6/14 下午8:20
  */
 @Data
 public class RoomDto {

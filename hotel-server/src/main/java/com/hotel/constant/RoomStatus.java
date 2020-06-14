@@ -3,9 +3,10 @@ package com.hotel.constant;
 import java.util.Objects;
 
 /**
- * @author guangyong.yang
- * @date 2019-01-21
- * @description
+ * RoomStatus
+ *
+ * @author suwen
+ * @date 2020/6/14 下午8:19
  */
 public enum RoomStatus {
   /** 空房 */

@@ -6,9 +6,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 /**
- * @author guangyong.yang
- * @date 2019-01-25
- * @description
+ * BedServiceImpl
+ *
+ * @author suwen
+ * @date 2020/6/14 下午8:22
  */
 @Service
 public class BedServiceImpl implements BedService {

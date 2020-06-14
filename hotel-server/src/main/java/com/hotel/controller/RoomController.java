@@ -29,8 +29,10 @@ import java.util.Date;
 import java.util.List;
 
 /**
- * @author guangyong.yang
- * @date 2019-01-20 客房restful接口
+ * RoomController 客房restful接口
+ *
+ * @author suwen
+ * @date 2020/6/14 下午8:20
  */
 @RestController
 @Log4j2

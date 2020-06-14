@@ -7,9 +7,10 @@ import java.io.Serializable;
 import java.util.Date;
 
 /**
- * @author guangyong.yang
- * @date 2019-01-21
- * @description
+ * Income
+ *
+ * @author suwen
+ * @date 2020/6/14 下午8:21
  */
 @Data
 @Entity

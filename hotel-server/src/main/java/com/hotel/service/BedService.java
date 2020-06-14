@@ -1,9 +1,10 @@
 package com.hotel.service;
 
 /**
- * @author guangyong.yang
- * @date 2019-01-25
- * @description
+ * BedService
+ *
+ * @author suwen
+ * @date 2020/6/14 下午8:23
  */
 public interface BedService {
   /**

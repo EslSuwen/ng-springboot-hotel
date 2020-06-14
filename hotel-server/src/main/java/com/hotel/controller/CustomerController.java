@@ -24,8 +24,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * @author guangyong.yang
- * @date 2019-01-27 客人ResultFul接口
+ * CustomerController 客人ResultFul接口
+ *
+ * @author suwen
+ * @date 2020/6/14 下午8:19
  */
 @RestController
 @Log4j2

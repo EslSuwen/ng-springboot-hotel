@@ -1,9 +1,10 @@
 package com.hotel.constant;
 
 /**
- * @author guangyong.yang
- * @date 2019-01-21
- * @description
+ * RetCode
+ *
+ * @author suwen
+ * @date 2020/6/14 下午8:19
  */
 public class RetCode {
   // 成功消息

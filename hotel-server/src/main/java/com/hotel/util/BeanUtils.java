@@ -12,12 +12,13 @@ import java.util.Objects;
 import java.util.stream.Stream;
 
 /**
- * @author guangyong.yang
- * @date 2019-01-20
- * @description
+ * BeanUtils
+ *
+ * @author suwen
+ * @date 2020/6/14 下午8:24
  */
 @Log4j2
-public class BeanUtils {
+public final class BeanUtils {
 
   @SuppressWarnings("unchecked")
   public static <T> T getFieldValue(Object obj, String filedName) {

@@ -5,9 +5,10 @@ import com.hotel.entity.Customer;
 import java.util.List;
 
 /**
- * @author guangyong.yang
- * @date 2019-01-21
- * @description
+ * CustomerService
+ * 
+ * @author suwen
+ * @date 2020/6/14 下午8:24
  */
 public interface CustomerService {
   /**

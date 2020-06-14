@@ -1,8 +1,9 @@
 package com.hotel.annotation;
 
 /**
- * @author guangyong.yang
- * @date 2019-01-22
- * @description
+ * LoginGroup
+ *
+ * @author suwen
+ * @date 2020/6/14 下午8:18
  */
 public interface LoginGroup {}
