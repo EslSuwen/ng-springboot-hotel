@@ -10,7 +10,6 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
  * @author guangyong.yang
  * @date 2019-01-20
  */
-@EnableSwagger2
 @SpringBootApplication
 public class HotelApplication {
   public static void main(String[] args) {
