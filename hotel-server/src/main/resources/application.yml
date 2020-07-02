@@ -8,10 +8,9 @@ server:                  #配置server
 
 spring:
   profiles:
-    active: dev
+    active: prod
   datasource:
     druid:
-      url: jdbc:mysql://47.107.239.108:3306/cmsDB?characterEncoding=utf-8
       #url: jdbc:mysql://localhost:3306/cmsDB?characterEncoding=utf8&amp&useSSL=false&amp&serverTimezone=UTC&amp&rewriteBatchedStatements=true
       username: root
       password: Cssl123.
@@ -107,3 +106,22 @@ security:
     expiration: 12000
     issuer: suwen
     authentication-path: /api/login
+
+---
+#生产环境配置
+
+spring:
+  profiles: dev
+  datasource:
+    druid:
+      url: jdbc:mysql://47.107.239.108:3306/cmsDB?characterEncoding=utf-8
+
+---
+#生产环境配置
+
+spring:
+  profiles: prod
+  datasource:
+    druid:
+      url: jdbc:mysql://localhost:3306/cmsDB?characterEncoding=utf8
+
